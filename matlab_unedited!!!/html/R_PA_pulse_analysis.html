@@ -1,0 +1,992 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>R_PA_pulse_analysis</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-09-27"><meta name="DC.source" content="R_PA_pulse_analysis.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Generate Plots for Pulmonary Arteries with Pulsatile inlet flow and R BC</a></li><li><a href="#2">Flow plots</a></li><li><a href="#3">Pressure Plots</a></li><li><a href="#4">WSS Plots</a></li></ul></div><h2>Generate Plots for Pulmonary Arteries with Pulsatile inlet flow and R BC<a name="1"></a></h2><p>Adapted from Casey's R_Aorta_Pulse_New.m script Melody Dong 9/26/17</p><pre class="codeinput">clear
+clc
+close <span class="string">all</span>
+
+direc = <span class="string">'/home/melody/PH/CHD_model/VSD_1DSolver/Q4R200/text/'</span>;
+cd(direc);
+dat_list = dir(<span class="string">'*.dat'</span>);
+dat_names = {dat_list.name};
+clearvars <span class="string">dat_list</span>
+prefix_name = <span class="string">'LPARPAall_mod3_LINEAR'</span>;
+
+<span class="comment">% Branch Labels</span>
+branches = {<span class="string">'inflow'</span>, <span class="string">'LPA1'</span>, <span class="string">'LPA1_1'</span>, <span class="string">'LPA1_1_1'</span>, <span class="string">'LPA1_1_2'</span>, <span class="string">'LPA1_1_2_1'</span>, <span class="string">'LPA1_1_2_2'</span>, <span class="string">'LPA1_1_3'</span>, <span class="keyword">...</span>
+    <span class="string">'LPA1_2'</span>, <span class="string">'LPA1_3'</span>, <span class="string">'LPA1_3_1'</span>, <span class="string">'LPA1_3_2'</span>, <span class="string">'LPA1_4'</span>, <span class="string">'LPA1_4_1'</span>, <span class="string">'LPA2'</span>, <span class="string">'LPA2_3'</span>, <span class="keyword">...</span>
+    <span class="string">'LPA3'</span>, <span class="string">'LPA3_1'</span>, <span class="string">'LPA3_1_1'</span>, <span class="string">'LPA3_2'</span>, <span class="string">'LPA3_2_1'</span>, <span class="string">'LPA3_3'</span>, <span class="string">'LPA3_4'</span>, <span class="string">'LPA4'</span>, <span class="keyword">...</span>
+    <span class="string">'LPA5'</span>, <span class="string">'LPA5_1'</span>, <span class="string">'LPA6'</span>, <span class="string">'LPA6_1'</span>, <span class="string">'LPA7'</span>, <span class="string">'LPA7_1'</span>, <span class="string">'LPA8'</span>, <span class="string">'LPA9'</span>, <span class="keyword">...</span>
+    <span class="string">'LPA9_1'</span>, <span class="string">'LPA9_2'</span>, <span class="string">'LPA10'</span>, <span class="string">'LPA10_1'</span>, <span class="string">'LPA10_1_1'</span>, <span class="string">'LPA10_1_2'</span>, <span class="string">'LPA10_2'</span>, <span class="string">'LPA10_3'</span>, <span class="keyword">...</span>
+    <span class="string">'LPA_1'</span>, <span class="string">'LPA_1_1'</span>, <span class="string">'LPA_1_1_1'</span>, <span class="string">'LPA_1_2'</span>, <span class="string">'LPA_1_2_1'</span>, <span class="string">'LPA_1_3'</span>, <span class="string">'LPA_1_4'</span>, <span class="string">'LPA_1_5'</span>, <span class="keyword">...</span>
+    <span class="string">'LPA_1_6'</span>, <span class="string">'LPA_1_7'</span>, <span class="string">'LPA'</span>, <span class="string">'RPA'</span>, <span class="string">'RPA1'</span>, <span class="string">'RPA1_1'</span>, <span class="string">'RPA1_1_1'</span>, <span class="string">'RPA1_1_2_2'</span>, <span class="string">'RPA1_1_3'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA1_1_4'</span>, <span class="string">'RPA1_2'</span>, <span class="string">'RPA1_2_1'</span>, <span class="string">'RPA1_2_2'</span>, <span class="string">'RPA1_3'</span>, <span class="string">'RPA1_4'</span>, <span class="string">'RPA1_4_1'</span>, <span class="string">'RPA1_4_1_1'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA1_4_1_1_1'</span>, <span class="string">'RPA1_4_1_2'</span>, <span class="string">'RPA1_4_1_2_1'</span>, <span class="string">'RPA1_4_2'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA1_4_2_1'</span>, <span class="string">'RPA1_4_3'</span>, <span class="string">'RPA3'</span>, <span class="string">'RPA3_1'</span>, <span class="string">'RPA3_2'</span>, <span class="string">'RPA3_3'</span>, <span class="string">'RPA3_4'</span>, <span class="string">'RPA3_5'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA4'</span>, <span class="string">'RPA4_1'</span>, <span class="string">'RPA4_2'</span>, <span class="string">'RPA4_2_1'</span>, <span class="string">'RPA4_3'</span>, <span class="string">'RPA5'</span>, <span class="string">'RPA5_1'</span>, <span class="string">'RPA5_1_1'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA6'</span>, <span class="string">'RPA6_1'</span>, <span class="string">'RPA6_1_1'</span>, <span class="string">'RPA6_1_2'</span>, <span class="string">'RPA6_2'</span>, <span class="string">'RPA7'</span>, <span class="string">'RPA7_1'</span>, <span class="string">'RPA8'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA9'</span>, <span class="string">'RPA10'</span>, <span class="string">'RPA10_1'</span>, <span class="string">'RPA11'</span>, <span class="string">'RPA12'</span>, <span class="string">'RPA12_1'</span>, <span class="string">'RPA12_2'</span>, <span class="string">'RPA12_3'</span>, <span class="keyword">...</span>
+    <span class="string">'RPA13'</span>, <span class="string">'RPA14'</span>, <span class="string">'RPA15'</span>, <span class="string">'RPA_1'</span>, <span class="string">'RPA_1_1'</span>, <span class="string">'RPA_1_1_1'</span>};
+
+
+<span class="comment">% Find outlet segments</span>
+outlet_segname = {};
+<span class="keyword">for</span> ind_branch = 2:size(branches,2)
+    <span class="comment">%define temporary branch name</span>
+    temp_branch = strcat(branches{ind_branch},<span class="string">'_'</span>);
+    <span class="comment">%find all files with temp_branch name</span>
+    temp_matchind = ~cellfun(<span class="string">'isempty'</span>,strfind(dat_names,temp_branch));
+    temp_files = dat_names(temp_matchind);
+    <span class="comment">%narrow search to just files with _Re.dat</span>
+    temp_matchind = ~cellfun(<span class="string">'isempty'</span>,strfind(temp_files,<span class="string">'_Re.dat'</span>));
+    temp_files = temp_files(temp_matchind);
+
+    maxsegnum = 0;
+
+    <span class="keyword">for</span> ind_file = 1:size(temp_files,2)
+        temp = char(temp_files(ind_file));
+        temp_seg = temp(size(prefix_name,2)+1:(end-size(<span class="string">'_Re.dat'</span>,2)));
+        segnum =  str2num(temp_seg(size(temp_branch,2)+1:end));
+
+        <span class="keyword">if</span> ~isempty(segnum)
+            <span class="comment">%find outlet segment number (=max segment number)</span>
+            <span class="keyword">if</span> segnum&gt;maxsegnum
+                maxsegnum = segnum;
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+    <span class="keyword">end</span>
+
+    outlet_segname{ind_branch} = strcat(temp_branch,num2str(maxsegnum));
+
+<span class="keyword">end</span>
+</pre><h2>Flow plots<a name="2"></a></h2><p>Read flow data</p><pre class="codeinput">flow1D = [];
+vasculatureFlow = [];
+
+<span class="comment">% inflow</span>
+temp = load(strcat(prefix_name,<span class="string">'LPA_0_flow.dat'</span>)); <span class="comment">%branches{51},'_0','_flow.dat'));</span>
+[rows, ~] = size(temp);
+flow1D(1,:) = temp(rows,:);
+vasculatureFlow(1,:) = temp(1,:); <span class="comment">%first element of 1st segment = inflow</span>
+
+<span class="comment">% all other outlet flows</span>
+<span class="keyword">for</span> ind_outlet = 2:size(outlet_segname,2)
+    temp = load(strcat(prefix_name,outlet_segname{ind_outlet},<span class="string">'_flow.dat'</span>));
+    [rows, ~] = size(temp);
+    flow1D(ind_outlet,:) = temp(rows,:); <span class="comment">%only saves last element in segment (outlet)</span>
+<span class="keyword">end</span>
+
+inflow = load(<span class="string">'/home/melody/PH/CHD_model/VSD_QP/pulsQ4.flow'</span>);
+F = importdata(<span class="string">'/home/melody/PH/CHD_model/VSD_QP/pulsatile/72-procs_case/VSD_QP_oldgui-allresults/all_results-flows.txt'</span>,<span class="string">'\t'</span>,1);
+flow3D = F.data;
+flow3D(:,2) = -1.*flow3D(:,2);
+
+
+<span class="comment">%%%%%%%%%%%% SET UP TIME ARRAYS %%%%%%%%%%%%%</span>
+
+<span class="comment">% Get info for 1D data</span>
+[~, numSteps] = size(flow1D);
+<span class="comment">% how many save steps in one cardiac cycle (i.e. 1 second)</span>
+cycle = 44;
+dt = 0.02;
+<span class="comment">% convert times to seconds</span>
+t = 0:dt:cycle*dt;
+<span class="comment">% only plot the last cardiac cycle</span>
+tt = cycle:cycle+cycle;
+
+<span class="comment">% tt = 2:numSteps; %numSteps-cycle:numSteps;</span>
+<span class="comment">% tt=2:cycle+2;</span>
+
+<span class="comment">% Do the same for 3D data</span>
+cycle3D = 21;
+dt3D = 0.04285;
+[numSteps3D,~] = size(flow3D);
+<span class="comment">% convert time to seconds</span>
+t3D = 0:dt3D:cycle3D*dt3D;
+<span class="comment">% only plot last cardiac cycle</span>
+tt3D = numSteps3D-cycle3D:numSteps3D;
+
+
+<span class="comment">%%%%%%%%%%%% GENERATE PLOTS %%%%%%%%%%%%%</span>
+
+
+<span class="comment">% Plot all flows</span>
+figureNum = 1;
+<span class="comment">% figure(figureNum)</span>
+<span class="comment">% figureNum = figureNum + 1;</span>
+
+<span class="comment">% Make colors for 3 of the same color plotted in a row</span>
+co = [0    0.4470    0.7410;
+    0    0.4470    0.7410;
+    0.8500    0.3250    0.0980;
+    0.8500    0.3250    0.0980;
+    0.9290    0.6940    0.1250;
+    0.9290    0.6940    0.1250;
+    0.4940    0.1840    0.5560;
+    0.4940    0.1840    0.5560;
+    0.4660    0.6740    0.1880;
+    0.4660    0.6740    0.1880;
+    0.3010    0.7450    0.9330;
+    0.3010    0.7450    0.9330;
+    0.6350    0.0780    0.1840;
+    0.6350    0.0780    0.1840
+    0         0         1
+    0         0         1
+    1         0         0
+    1         0         0
+    1         0         1
+    1         0         1];
+set(groot,<span class="string">'defaultAxesColorOrder'</span>,co);
+hold <span class="string">on</span>
+
+<span class="comment">% Parse through 1D and 3D flow for each branch</span>
+<span class="keyword">for</span> i = 2:20:size(flow1D,1)
+    figure(figureNum)
+    figureNum = figureNum + 1;
+    name = sprintf(<span class="string">'%s 1D'</span>,branches{i});
+    plot(t,flow1D(i,tt),<span class="string">'DisplayName'</span>,name,<span class="string">'LineWidth'</span>,2);
+    hold <span class="string">on</span>
+    name = sprintf(<span class="string">'%s 3D'</span>,branches{i});
+    plot(t3D,flow3D(tt3D,i+1),<span class="string">':'</span>,<span class="string">'DisplayName'</span>,name,<span class="string">'LineWidth'</span>,2);
+    hold <span class="string">on</span>
+
+    <span class="comment">% show legend</span>
+    lgd = legend(<span class="string">'show'</span>,<span class="string">'Location'</span>,<span class="string">'eastoutside'</span>);
+    lgd.FontSize = 8;
+    set(lgd, <span class="string">'Interpreter'</span>,<span class="string">'none'</span>);
+    legend(<span class="string">'boxOff'</span>)
+    xlim([0 cycle*dt])
+    xlabel(<span class="string">'time (s)'</span>)
+    ylabel(<span class="string">'flow (cm^3/s)'</span>)
+    title(<span class="string">'Flow at Branch in PA model (Pulsatile flow, R BC)'</span>)
+<span class="keyword">end</span>
+<span class="comment">%name = sprintf('%s',branches{11});</span>
+<span class="comment">%plot(inflow(:,1),inflow(:,2),'--k','DisplayName',name,'LineWidth',2);</span>
+
+
+
+
+<span class="comment">% % Plot flows at each outlet individually</span>
+<span class="comment">% figure(figureNum)</span>
+<span class="comment">% figureNum = figureNum + 1;</span>
+<span class="comment">% hold on</span>
+<span class="comment">%</span>
+<span class="comment">% b = bar([flow1D(:,end),flow3D(end,2:end)'],0.3); %,flow3DFSI(end,2:end)'],0.3);</span>
+<span class="comment">% colors = [0    0.4470    0.7410;</span>
+<span class="comment">%       0.8500    0.3250    0.0980;</span>
+<span class="comment">%       0.9290    0.6940    0.1250];</span>
+<span class="comment">% b(1).FaceColor = colors(1,:);</span>
+<span class="comment">% b(2).FaceColor = colors(2,:);</span>
+<span class="comment">% % b(3).FaceColor = colors(3,:);</span>
+<span class="comment">%</span>
+<span class="comment">% % Show legend</span>
+<span class="comment">% legend('1D','3D Rigid','3D FSI');</span>
+<span class="comment">%</span>
+<span class="comment">% % Set axis labels and title</span>
+<span class="comment">% set(gca, 'XTick', 1:size(flow1D), 'XTickLabel', branches);</span>
+<span class="comment">% ax = gca;</span>
+<span class="comment">% ax.XTickLabelRotation = 45;</span>
+<span class="comment">% ylabel('flow (cm/s)')</span>
+<span class="comment">% name = sprintf('Flow at outlets in Pulmonary Artery model (Pulsatile Flow, R BC)');</span>
+<span class="comment">% title(name)</span>
+
+<span class="comment">% Plot Inflow Waveforms</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>
+
+plot(t, flow1D(1,tt)*60/1000, <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 2);
+hold <span class="string">on</span>;
+plot(t3D, flow3D(tt3D, 2)*60/1000, <span class="string">'r'</span>, <span class="string">'LineWidth'</span>, 2);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Flow (L/min)'</span>);
+title(<span class="string">'Inflow Waveform Comparison between 1D and 3D'</span>);
+legend(<span class="string">'1D Inflow'</span>,<span class="string">'3D Inflow'</span>);
+
+<span class="comment">% Average flow at each outlet and inlet</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>
+
+avg_flow1D = mean(flow1D(:,tt),2);
+avg_flow3D = mean(flow3D(tt3D,2:end,1))';
+
+<span class="comment">% b = bar([avg_flow1D,avg_flow3D],0.3);</span>
+plot((avg_flow1D-avg_flow3D)./avg_flow3D,<span class="string">'o'</span>)
+xlabel(<span class="string">'PA model outlets'</span>);
+ylabel(<span class="string">'Error difference between 1D and 3D (normalized to 3D)'</span>);
+title(<span class="string">'Flow error at outlets in PA model'</span>);
+
+colors = [0    0.4470    0.7410;
+      0.8500    0.3250    0.0980;
+      0.9290    0.6940    0.1250];
+b(1).FaceColor = colors(1,:);
+b(2).FaceColor = colors(2,:);
+</pre><img vspace="5" hspace="5" src="R_PA_pulse_analysis_01.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_02.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_03.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_04.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_05.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_06.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_07.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_08.png" alt=""> <h2>Pressure Plots<a name="3"></a></h2><pre class="codeinput"><span class="comment">% Read pressure data</span>
+pressure1D = [];
+vasculaturePressure = [];
+temp = load(strcat(prefix_name,branches{2},<span class="string">'_0'</span>,<span class="string">'_pressure.dat'</span>));
+[rows, ~] = size(temp);
+pressure1D(1,:) = temp(rows,:);
+vasculaturePressure(1,:) = temp(rows,:);
+
+<span class="comment">% all other outlet pressures</span>
+<span class="keyword">for</span> ind_outlet = 2:size(outlet_segname,2)
+    temp = load(strcat(prefix_name,outlet_segname{ind_outlet},<span class="string">'_pressure.dat'</span>));
+    [rows, ~] = size(temp);
+    pressure1D(ind_outlet,:) = temp(rows,:);
+<span class="keyword">end</span>
+<span class="comment">% Convert from Barye to mmHg</span>
+pressure1D = 0.0007500616827.*pressure1D;
+vasculaturePressure = 0.0007500616827.*vasculaturePressure;
+
+P = importdata(<span class="string">'/home/melody/PH/CHD_model/VSD_QP/pulsatile/72-procs_case/VSD_QP_oldgui-allresults/all_results-pressures.txt'</span>,<span class="string">'\t'</span>,1);
+pressure3D = P.data;
+<span class="comment">% Convert from Barye to mmHg</span>
+pressure3D = 0.0007500616827.*pressure3D;
+
+<span class="comment">%%%%%%%%%%%% GENERATE PLOTS %%%%%%%%%%%%%</span>
+
+<span class="comment">% Plot all pressures</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+
+<span class="comment">% Make colors for 3 of the same color plotted in a row</span>
+co = [0    0.4470    0.7410;
+    0    0.4470    0.7410;
+    0    0.4470    0.7410;
+    0.8500    0.3250    0.0980;
+    0.8500    0.3250    0.0980;
+    0.8500    0.3250    0.0980;
+    0.9290    0.6940    0.1250;
+    0.9290    0.6940    0.1250;
+    0.9290    0.6940    0.1250;
+    0.4940    0.1840    0.5560;
+    0.4940    0.1840    0.5560;
+    0.4940    0.1840    0.5560;
+    0.4660    0.6740    0.1880;
+    0.4660    0.6740    0.1880;
+    0.4660    0.6740    0.1880;
+    0.3010    0.7450    0.9330;
+    0.3010    0.7450    0.9330;
+    0.3010    0.7450    0.9330;
+    0.6350    0.0780    0.1840;
+    0.6350    0.0780    0.1840;
+    0.6350    0.0780    0.1840
+    0         0         1
+    0         0         1
+    0         0         1
+    1         0         0
+    1         0         0
+    1         0         0
+    1         0         1
+    1         0         1
+    1         0         1];
+set(groot,<span class="string">'defaultAxesColorOrder'</span>,co);
+hold <span class="string">on</span>
+
+<span class="keyword">for</span> i = 1:20:size(pressure1D,1)
+    figure(figureNum)
+    figureNum = figureNum + 1;
+    name = sprintf(<span class="string">'%s 1D'</span>,branches{i});
+    plot(t,pressure1D(i,tt),<span class="string">'DisplayName'</span>,name,<span class="string">'LineWidth'</span>,2);
+    hold <span class="string">on</span>
+    name = sprintf(<span class="string">'%s 3D'</span>,branches{i});
+    plot(t3D,pressure3D(tt3D,i+1),<span class="string">':'</span>,<span class="string">'DisplayName'</span>,name,<span class="string">'LineWidth'</span>,2);
+
+    lgd = legend(<span class="string">'show'</span>,<span class="string">'Location'</span>,<span class="string">'eastoutside'</span>);
+    lgd.FontSize = 8;
+    set(lgd, <span class="string">'Interpreter'</span>,<span class="string">'none'</span>);
+    legend(<span class="string">'boxOff'</span>)
+    xlim([0 cycle*dt])
+    xlabel(<span class="string">'time (s)'</span>)
+    ylabel(<span class="string">'pressure (mmHg)'</span>)
+    title(<span class="string">'Pressure at outlet of branches in PA model (Pulsatile flow, R BC)'</span>)
+<span class="keyword">end</span>
+
+<span class="comment">%</span>
+<span class="comment">% % show legend</span>
+<span class="comment">% lgd = legend('show','Location','eastoutside');</span>
+<span class="comment">% lgd.FontSize = 8;</span>
+<span class="comment">% legend('boxOff')</span>
+<span class="comment">% xlim([0 cycle*dt])</span>
+<span class="comment">% xlabel('time (s)')</span>
+<span class="comment">% ylabel('pressure (mmHg)')</span>
+<span class="comment">% title('Pressure at outlet of branches in PA model (Pulsatile flow, R BC)')</span>
+
+
+<span class="comment">% % Plot pressures at each outlet individually</span>
+<span class="comment">% figure(figureNum)</span>
+<span class="comment">% figureNum = figureNum + 1;</span>
+<span class="comment">% hold on</span>
+<span class="comment">%</span>
+<span class="comment">% b = bar([pressure1D(:,end),pressure3D(end,2:end)'], 0.3);</span>
+<span class="comment">% colors = [0    0.4470    0.7410;</span>
+<span class="comment">%       0.8500    0.3250    0.0980;</span>
+<span class="comment">%       0.9290    0.6940    0.1250];</span>
+<span class="comment">% b(1).FaceColor = colors(1,:);</span>
+<span class="comment">% b(2).FaceColor = colors(2,:);</span>
+<span class="comment">% b(3).FaceColor = colors(3,:);</span>
+<span class="comment">%</span>
+<span class="comment">% % Show legend</span>
+<span class="comment">% legend('1D','3D Rigid','3D FSI');</span>
+<span class="comment">%</span>
+<span class="comment">% % Set axis labels and title</span>
+<span class="comment">% set(gca, 'XTick', 1:size(pressure1D), 'XTickLabel', branches);</span>
+<span class="comment">% ax = gca;</span>
+<span class="comment">% ax.XTickLabelRotation = 45;</span>
+<span class="comment">% ylabel('Pressure (mmHg)')</span>
+<span class="comment">% name = sprintf('Pressure at outlet in PA model (Pulsatile flow, R BC)');</span>
+<span class="comment">% title(name)</span>
+
+<span class="comment">% Plot Pressure Waveform at inlet</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>;
+
+plot(t, pressure1D(1,tt),<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,2);
+hold <span class="string">on</span>;
+plot(t3D, pressure3D(tt3D,2),<span class="string">'r'</span>,<span class="string">'LineWidth'</span>,2);
+xlabel(<span class="string">'Time (s)'</span>);
+ylabel(<span class="string">'Pressure (mmHg)'</span>);
+title(<span class="string">'Pressure Comparison between 1D and 3D Inlet'</span>);
+legend(<span class="string">'1D Pressure'</span>,<span class="string">'3D Pressure'</span>);
+
+<span class="comment">% Average pressure at each outlet and inlet</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>
+
+avg_pressure1D = mean(pressure1D(:,tt),2);
+avg_pressure3D = mean(pressure3D(tt3D,2:end),1)';
+
+plot((avg_pressure1D-avg_pressure3D)./avg_pressure3D,<span class="string">'o'</span>)
+xlabel(<span class="string">'PA model outlets'</span>);
+ylabel(<span class="string">'Error difference between 1D and 3D (normalized to 3D)'</span>);
+title(<span class="string">'Pressure error at outlets in PA model'</span>);
+
+colors = [0    0.4470    0.7410;
+      0.8500    0.3250    0.0980;
+      0.9290    0.6940    0.1250];
+b(1).FaceColor = colors(1,:);
+b(2).FaceColor = colors(2,:);
+</pre><img vspace="5" hspace="5" src="R_PA_pulse_analysis_09.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_10.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_11.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_12.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_13.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_14.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_15.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_16.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_17.png" alt=""> <h2>WSS Plots<a name="4"></a></h2><pre class="codeinput">viscosity = 0.04;
+
+<span class="comment">% Area outlet differences</span>
+<span class="comment">%   3D area</span>
+area3D = load(<span class="string">'/home/melody/PH/CHD_model/VSD_QP/SU0201_2009_outletArea.txt'</span>);
+
+
+<span class="comment">% Read WSS data</span>
+wss1D = [];
+vasculaturewss = [];
+temp = load(strcat(prefix_name,branches{2},<span class="string">'_0'</span>,<span class="string">'_wss.dat'</span>));
+[rows, ~] = size(temp);
+wss1D(1,:) = temp(rows,:);
+vasculaturePressure(1,:) = temp(rows,:);
+
+<span class="comment">% 3D outlet areas</span>
+wss3D = [];
+
+<span class="comment">% all other outlet WSS</span>
+<span class="keyword">for</span> ind_outlet = 2:size(outlet_segname,2)
+    temp = load(strcat(prefix_name,outlet_segname{ind_outlet},<span class="string">'_wss.dat'</span>));
+    [rows, ~] = size(temp);
+    wss1D(ind_outlet,:) = temp(rows,:);
+    wss3D(ind_outlet-1,:) = 4*viscosity*flow3D(tt3D, ind_outlet+1)./(pi*sqrt(area3D(ind_outlet-1)/pi)^3);
+<span class="keyword">end</span>
+
+<span class="comment">%   1D area</span>
+area1D = pi*((4*viscosity*mean(flow1D(:,tt),2))./(pi*mean(wss1D(:,tt),2))).^(2/3);
+
+<span class="comment">% Plot average WSS at outlets</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>
+
+avg_wss1D = mean(wss1D(2:end,tt),2);
+avg_wss3D = mean(wss3D(:,:),2);
+
+plot(avg_wss1D,<span class="string">'bo'</span>);
+hold <span class="string">on</span>;
+plot(avg_wss3D,<span class="string">'ro'</span>);
+xlabel(<span class="string">'PA Model Outlets'</span>);
+ylabel(<span class="string">'WSS (dyn/cm2)'</span>);
+title(<span class="string">'WSS comparison between 1D and 3D'</span>)
+legend(<span class="string">'1D WSS'</span>, <span class="string">'3D WSS'</span>);
+
+
+<span class="comment">% Plot outlet areas</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>;
+
+plot(area1D(2:end),<span class="string">'bo'</span>)
+hold <span class="string">on</span>;
+plot(area3D,<span class="string">'ro'</span>)
+title(<span class="string">'Area of 1D and 3D outlets'</span>);
+legend(<span class="string">'1D area'</span>,<span class="string">'3D area'</span>)
+
+
+<span class="comment">% Average WSS error at each outlet</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>
+
+plot((avg_wss1D-avg_wss3D)./avg_wss3D,<span class="string">'o'</span>)
+xlabel(<span class="string">'PA model outlets'</span>);
+ylabel(<span class="string">'Error difference between 1D and 3D (normalized to 3D)'</span>);
+title(<span class="string">'WSS error at outlets in PA model'</span>);
+
+
+<span class="comment">% Average WSS vs. area at each outlet</span>
+figure(figureNum)
+figureNum = figureNum + 1;
+hold <span class="string">on</span>
+
+plot(area1D(2:end),avg_wss1D,<span class="string">'bo'</span>);
+hold <span class="string">on</span>;
+plot(area3D, avg_wss3D, <span class="string">'ro'</span>);
+legend(<span class="string">'1D WSS'</span>, <span class="string">'3D WSS'</span>);
+xlabel(<span class="string">'Area (cm^2)'</span>);
+ylabel(<span class="string">'WSS (dyn/cm2)'</span>);
+title(<span class="string">'WSS comparison between 1D and 3D'</span>)
+</pre><img vspace="5" hspace="5" src="R_PA_pulse_analysis_18.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_19.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_20.png" alt=""> <img vspace="5" hspace="5" src="R_PA_pulse_analysis_21.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Generate Plots for Pulmonary Arteries with Pulsatile inlet flow and R BC
+% Adapted from Casey's R_Aorta_Pulse_New.m script
+% Melody Dong 9/26/17
+
+clear
+clc
+close all
+
+direc = '/home/melody/PH/CHD_model/VSD_1DSolver/Q4R200/text/';
+cd(direc);
+dat_list = dir('*.dat');
+dat_names = {dat_list.name};
+clearvars dat_list
+prefix_name = 'LPARPAall_mod3_LINEAR';
+
+% Branch Labels
+branches = {'inflow', 'LPA1', 'LPA1_1', 'LPA1_1_1', 'LPA1_1_2', 'LPA1_1_2_1', 'LPA1_1_2_2', 'LPA1_1_3', ...
+    'LPA1_2', 'LPA1_3', 'LPA1_3_1', 'LPA1_3_2', 'LPA1_4', 'LPA1_4_1', 'LPA2', 'LPA2_3', ...
+    'LPA3', 'LPA3_1', 'LPA3_1_1', 'LPA3_2', 'LPA3_2_1', 'LPA3_3', 'LPA3_4', 'LPA4', ...
+    'LPA5', 'LPA5_1', 'LPA6', 'LPA6_1', 'LPA7', 'LPA7_1', 'LPA8', 'LPA9', ...
+    'LPA9_1', 'LPA9_2', 'LPA10', 'LPA10_1', 'LPA10_1_1', 'LPA10_1_2', 'LPA10_2', 'LPA10_3', ...
+    'LPA_1', 'LPA_1_1', 'LPA_1_1_1', 'LPA_1_2', 'LPA_1_2_1', 'LPA_1_3', 'LPA_1_4', 'LPA_1_5', ...
+    'LPA_1_6', 'LPA_1_7', 'LPA', 'RPA', 'RPA1', 'RPA1_1', 'RPA1_1_1', 'RPA1_1_2_2', 'RPA1_1_3', ...
+    'RPA1_1_4', 'RPA1_2', 'RPA1_2_1', 'RPA1_2_2', 'RPA1_3', 'RPA1_4', 'RPA1_4_1', 'RPA1_4_1_1', ...
+    'RPA1_4_1_1_1', 'RPA1_4_1_2', 'RPA1_4_1_2_1', 'RPA1_4_2', ...
+    'RPA1_4_2_1', 'RPA1_4_3', 'RPA3', 'RPA3_1', 'RPA3_2', 'RPA3_3', 'RPA3_4', 'RPA3_5', ...
+    'RPA4', 'RPA4_1', 'RPA4_2', 'RPA4_2_1', 'RPA4_3', 'RPA5', 'RPA5_1', 'RPA5_1_1', ...
+    'RPA6', 'RPA6_1', 'RPA6_1_1', 'RPA6_1_2', 'RPA6_2', 'RPA7', 'RPA7_1', 'RPA8', ...
+    'RPA9', 'RPA10', 'RPA10_1', 'RPA11', 'RPA12', 'RPA12_1', 'RPA12_2', 'RPA12_3', ...
+    'RPA13', 'RPA14', 'RPA15', 'RPA_1', 'RPA_1_1', 'RPA_1_1_1'}; 
+
+
+% Find outlet segments
+outlet_segname = {};
+for ind_branch = 2:size(branches,2)
+    %define temporary branch name
+    temp_branch = strcat(branches{ind_branch},'_');
+    %find all files with temp_branch name
+    temp_matchind = ~cellfun('isempty',strfind(dat_names,temp_branch));
+    temp_files = dat_names(temp_matchind);
+    %narrow search to just files with _Re.dat
+    temp_matchind = ~cellfun('isempty',strfind(temp_files,'_Re.dat'));
+    temp_files = temp_files(temp_matchind);
+    
+    maxsegnum = 0;
+    
+    for ind_file = 1:size(temp_files,2)
+        temp = char(temp_files(ind_file));
+        temp_seg = temp(size(prefix_name,2)+1:(end-size('_Re.dat',2)));
+        segnum =  str2num(temp_seg(size(temp_branch,2)+1:end));
+        
+        if ~isempty(segnum)
+            %find outlet segment number (=max segment number)
+            if segnum>maxsegnum
+                maxsegnum = segnum;
+            end
+        end  
+        
+    end
+    
+    outlet_segname{ind_branch} = strcat(temp_branch,num2str(maxsegnum));
+    
+end
+
+%% Flow plots
+% Read flow data
+flow1D = [];
+vasculatureFlow = [];
+
+% inflow
+temp = load(strcat(prefix_name,'LPA_0_flow.dat')); %branches{51},'_0','_flow.dat'));
+[rows, ~] = size(temp);
+flow1D(1,:) = temp(rows,:);
+vasculatureFlow(1,:) = temp(1,:); %first element of 1st segment = inflow
+
+% all other outlet flows
+for ind_outlet = 2:size(outlet_segname,2)
+    temp = load(strcat(prefix_name,outlet_segname{ind_outlet},'_flow.dat'));
+    [rows, ~] = size(temp);
+    flow1D(ind_outlet,:) = temp(rows,:); %only saves last element in segment (outlet)
+end
+
+inflow = load('/home/melody/PH/CHD_model/VSD_QP/pulsQ4.flow');
+F = importdata('/home/melody/PH/CHD_model/VSD_QP/pulsatile/72-procs_case/VSD_QP_oldgui-allresults/all_results-flows.txt','\t',1);
+flow3D = F.data;
+flow3D(:,2) = -1.*flow3D(:,2);
+
+
+%%%%%%%%%%%% SET UP TIME ARRAYS %%%%%%%%%%%%%
+
+% Get info for 1D data
+[~, numSteps] = size(flow1D);
+% how many save steps in one cardiac cycle (i.e. 1 second)
+cycle = 44;
+dt = 0.02;
+% convert times to seconds
+t = 0:dt:cycle*dt;
+% only plot the last cardiac cycle
+tt = cycle:cycle+cycle;
+
+% tt = 2:numSteps; %numSteps-cycle:numSteps;
+% tt=2:cycle+2;
+
+% Do the same for 3D data
+cycle3D = 21;
+dt3D = 0.04285;
+[numSteps3D,~] = size(flow3D);
+% convert time to seconds
+t3D = 0:dt3D:cycle3D*dt3D;
+% only plot last cardiac cycle
+tt3D = numSteps3D-cycle3D:numSteps3D;
+
+
+%%%%%%%%%%%% GENERATE PLOTS %%%%%%%%%%%%%
+
+
+% Plot all flows
+figureNum = 1;
+% figure(figureNum)
+% figureNum = figureNum + 1;
+
+% Make colors for 3 of the same color plotted in a row
+co = [0    0.4470    0.7410;
+    0    0.4470    0.7410;
+    0.8500    0.3250    0.0980;
+    0.8500    0.3250    0.0980;
+    0.9290    0.6940    0.1250;
+    0.9290    0.6940    0.1250;
+    0.4940    0.1840    0.5560;
+    0.4940    0.1840    0.5560;
+    0.4660    0.6740    0.1880;
+    0.4660    0.6740    0.1880;
+    0.3010    0.7450    0.9330;
+    0.3010    0.7450    0.9330;
+    0.6350    0.0780    0.1840;
+    0.6350    0.0780    0.1840
+    0         0         1
+    0         0         1
+    1         0         0
+    1         0         0
+    1         0         1
+    1         0         1];
+set(groot,'defaultAxesColorOrder',co);
+hold on
+
+% Parse through 1D and 3D flow for each branch
+for i = 2:20:size(flow1D,1)
+    figure(figureNum)
+    figureNum = figureNum + 1;
+    name = sprintf('%s 1D',branches{i});
+    plot(t,flow1D(i,tt),'DisplayName',name,'LineWidth',2);
+    hold on
+    name = sprintf('%s 3D',branches{i});
+    plot(t3D,flow3D(tt3D,i+1),':','DisplayName',name,'LineWidth',2);
+    hold on
+    
+    % show legend
+    lgd = legend('show','Location','eastoutside');
+    lgd.FontSize = 8;
+    set(lgd, 'Interpreter','none');
+    legend('boxOff')
+    xlim([0 cycle*dt])
+    xlabel('time (s)')
+    ylabel('flow (cm^3/s)')
+    title('Flow at Branch in PA model (Pulsatile flow, R BC)')
+end
+%name = sprintf('%s',branches{11});
+%plot(inflow(:,1),inflow(:,2),'REPLACE_WITH_DASH_DASHk','DisplayName',name,'LineWidth',2);
+
+
+
+
+% % Plot flows at each outlet individually
+% figure(figureNum)
+% figureNum = figureNum + 1;
+% hold on
+% 
+% b = bar([flow1D(:,end),flow3D(end,2:end)'],0.3); %,flow3DFSI(end,2:end)'],0.3);
+% colors = [0    0.4470    0.7410;
+%       0.8500    0.3250    0.0980;
+%       0.9290    0.6940    0.1250];
+% b(1).FaceColor = colors(1,:);
+% b(2).FaceColor = colors(2,:);
+% % b(3).FaceColor = colors(3,:);
+% 
+% % Show legend
+% legend('1D','3D Rigid','3D FSI');
+% 
+% % Set axis labels and title
+% set(gca, 'XTick', 1:size(flow1D), 'XTickLabel', branches);
+% ax = gca;
+% ax.XTickLabelRotation = 45;
+% ylabel('flow (cm/s)')
+% name = sprintf('Flow at outlets in Pulmonary Artery model (Pulsatile Flow, R BC)');
+% title(name)
+
+% Plot Inflow Waveforms
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on
+
+plot(t, flow1D(1,tt)*60/1000, 'b', 'LineWidth', 2);
+hold on;
+plot(t3D, flow3D(tt3D, 2)*60/1000, 'r', 'LineWidth', 2);
+xlabel('Time (s)');
+ylabel('Flow (L/min)');
+title('Inflow Waveform Comparison between 1D and 3D');
+legend('1D Inflow','3D Inflow');
+
+% Average flow at each outlet and inlet
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on
+
+avg_flow1D = mean(flow1D(:,tt),2);
+avg_flow3D = mean(flow3D(tt3D,2:end,1))';
+
+% b = bar([avg_flow1D,avg_flow3D],0.3);
+plot((avg_flow1D-avg_flow3D)./avg_flow3D,'o')
+xlabel('PA model outlets');
+ylabel('Error difference between 1D and 3D (normalized to 3D)');
+title('Flow error at outlets in PA model');
+
+colors = [0    0.4470    0.7410;
+      0.8500    0.3250    0.0980;
+      0.9290    0.6940    0.1250];
+b(1).FaceColor = colors(1,:);
+b(2).FaceColor = colors(2,:);
+
+
+
+
+
+
+%% Pressure Plots
+
+% Read pressure data
+pressure1D = [];
+vasculaturePressure = [];
+temp = load(strcat(prefix_name,branches{2},'_0','_pressure.dat'));
+[rows, ~] = size(temp);
+pressure1D(1,:) = temp(rows,:);
+vasculaturePressure(1,:) = temp(rows,:);
+
+% all other outlet pressures
+for ind_outlet = 2:size(outlet_segname,2)
+    temp = load(strcat(prefix_name,outlet_segname{ind_outlet},'_pressure.dat'));
+    [rows, ~] = size(temp);
+    pressure1D(ind_outlet,:) = temp(rows,:);
+end
+% Convert from Barye to mmHg
+pressure1D = 0.0007500616827.*pressure1D;
+vasculaturePressure = 0.0007500616827.*vasculaturePressure; 
+
+P = importdata('/home/melody/PH/CHD_model/VSD_QP/pulsatile/72-procs_case/VSD_QP_oldgui-allresults/all_results-pressures.txt','\t',1);
+pressure3D = P.data;
+% Convert from Barye to mmHg
+pressure3D = 0.0007500616827.*pressure3D;
+
+%%%%%%%%%%%% GENERATE PLOTS %%%%%%%%%%%%%
+
+% Plot all pressures
+figure(figureNum)
+figureNum = figureNum + 1;
+
+% Make colors for 3 of the same color plotted in a row
+co = [0    0.4470    0.7410;
+    0    0.4470    0.7410;
+    0    0.4470    0.7410;
+    0.8500    0.3250    0.0980;
+    0.8500    0.3250    0.0980;
+    0.8500    0.3250    0.0980;
+    0.9290    0.6940    0.1250;
+    0.9290    0.6940    0.1250;
+    0.9290    0.6940    0.1250;
+    0.4940    0.1840    0.5560;
+    0.4940    0.1840    0.5560;
+    0.4940    0.1840    0.5560;
+    0.4660    0.6740    0.1880;
+    0.4660    0.6740    0.1880;
+    0.4660    0.6740    0.1880;
+    0.3010    0.7450    0.9330;
+    0.3010    0.7450    0.9330;
+    0.3010    0.7450    0.9330;
+    0.6350    0.0780    0.1840;
+    0.6350    0.0780    0.1840;
+    0.6350    0.0780    0.1840
+    0         0         1
+    0         0         1
+    0         0         1
+    1         0         0
+    1         0         0
+    1         0         0
+    1         0         1
+    1         0         1
+    1         0         1];
+set(groot,'defaultAxesColorOrder',co);
+hold on
+
+for i = 1:20:size(pressure1D,1)
+    figure(figureNum)
+    figureNum = figureNum + 1;
+    name = sprintf('%s 1D',branches{i});
+    plot(t,pressure1D(i,tt),'DisplayName',name,'LineWidth',2);
+    hold on
+    name = sprintf('%s 3D',branches{i});
+    plot(t3D,pressure3D(tt3D,i+1),':','DisplayName',name,'LineWidth',2);
+    
+    lgd = legend('show','Location','eastoutside');
+    lgd.FontSize = 8;
+    set(lgd, 'Interpreter','none');
+    legend('boxOff')
+    xlim([0 cycle*dt])
+    xlabel('time (s)')
+    ylabel('pressure (mmHg)')
+    title('Pressure at outlet of branches in PA model (Pulsatile flow, R BC)')
+end
+
+% 
+% % show legend
+% lgd = legend('show','Location','eastoutside');
+% lgd.FontSize = 8;
+% legend('boxOff')
+% xlim([0 cycle*dt])
+% xlabel('time (s)')
+% ylabel('pressure (mmHg)')
+% title('Pressure at outlet of branches in PA model (Pulsatile flow, R BC)')
+
+
+% % Plot pressures at each outlet individually
+% figure(figureNum)
+% figureNum = figureNum + 1;
+% hold on
+% 
+% b = bar([pressure1D(:,end),pressure3D(end,2:end)'], 0.3);
+% colors = [0    0.4470    0.7410;
+%       0.8500    0.3250    0.0980;
+%       0.9290    0.6940    0.1250];
+% b(1).FaceColor = colors(1,:);
+% b(2).FaceColor = colors(2,:);
+% b(3).FaceColor = colors(3,:);
+% 
+% % Show legend
+% legend('1D','3D Rigid','3D FSI');   
+% 
+% % Set axis labels and title
+% set(gca, 'XTick', 1:size(pressure1D), 'XTickLabel', branches);
+% ax = gca;
+% ax.XTickLabelRotation = 45;
+% ylabel('Pressure (mmHg)')
+% name = sprintf('Pressure at outlet in PA model (Pulsatile flow, R BC)');
+% title(name)
+
+% Plot Pressure Waveform at inlet
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on;
+
+plot(t, pressure1D(1,tt),'b','LineWidth',2);
+hold on;
+plot(t3D, pressure3D(tt3D,2),'r','LineWidth',2);
+xlabel('Time (s)');
+ylabel('Pressure (mmHg)');
+title('Pressure Comparison between 1D and 3D Inlet');
+legend('1D Pressure','3D Pressure');
+
+% Average pressure at each outlet and inlet
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on
+
+avg_pressure1D = mean(pressure1D(:,tt),2);
+avg_pressure3D = mean(pressure3D(tt3D,2:end),1)';
+
+plot((avg_pressure1D-avg_pressure3D)./avg_pressure3D,'o')
+xlabel('PA model outlets');
+ylabel('Error difference between 1D and 3D (normalized to 3D)');
+title('Pressure error at outlets in PA model');
+
+colors = [0    0.4470    0.7410;
+      0.8500    0.3250    0.0980;
+      0.9290    0.6940    0.1250];
+b(1).FaceColor = colors(1,:);
+b(2).FaceColor = colors(2,:);
+
+
+%% WSS Plots
+
+viscosity = 0.04;
+
+% Area outlet differences
+%   3D area
+area3D = load('/home/melody/PH/CHD_model/VSD_QP/SU0201_2009_outletArea.txt');
+
+
+% Read WSS data
+wss1D = [];
+vasculaturewss = [];
+temp = load(strcat(prefix_name,branches{2},'_0','_wss.dat'));
+[rows, ~] = size(temp);
+wss1D(1,:) = temp(rows,:);
+vasculaturePressure(1,:) = temp(rows,:);
+
+% 3D outlet areas
+wss3D = [];
+
+% all other outlet WSS
+for ind_outlet = 2:size(outlet_segname,2)
+    temp = load(strcat(prefix_name,outlet_segname{ind_outlet},'_wss.dat'));
+    [rows, ~] = size(temp);
+    wss1D(ind_outlet,:) = temp(rows,:);
+    wss3D(ind_outlet-1,:) = 4*viscosity*flow3D(tt3D, ind_outlet+1)./(pi*sqrt(area3D(ind_outlet-1)/pi)^3);
+end
+
+%   1D area
+area1D = pi*((4*viscosity*mean(flow1D(:,tt),2))./(pi*mean(wss1D(:,tt),2))).^(2/3);
+
+% Plot average WSS at outlets
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on
+
+avg_wss1D = mean(wss1D(2:end,tt),2);
+avg_wss3D = mean(wss3D(:,:),2);
+
+plot(avg_wss1D,'bo');
+hold on;
+plot(avg_wss3D,'ro');
+xlabel('PA Model Outlets');
+ylabel('WSS (dyn/cm2)');
+title('WSS comparison between 1D and 3D')
+legend('1D WSS', '3D WSS');
+
+
+% Plot outlet areas
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on;
+
+plot(area1D(2:end),'bo')
+hold on;
+plot(area3D,'ro')
+title('Area of 1D and 3D outlets');
+legend('1D area','3D area')
+
+
+% Average WSS error at each outlet
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on
+
+plot((avg_wss1D-avg_wss3D)./avg_wss3D,'o')
+xlabel('PA model outlets');
+ylabel('Error difference between 1D and 3D (normalized to 3D)');
+title('WSS error at outlets in PA model');
+
+
+% Average WSS vs. area at each outlet
+figure(figureNum)
+figureNum = figureNum + 1;
+hold on
+
+plot(area1D(2:end),avg_wss1D,'bo');
+hold on;
+plot(area3D, avg_wss3D, 'ro');
+legend('1D WSS', '3D WSS');
+xlabel('Area (cm^2)');
+ylabel('WSS (dyn/cm2)');
+title('WSS comparison between 1D and 3D')
+
+##### SOURCE END #####
+--></body></html>
