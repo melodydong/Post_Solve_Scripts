@@ -1,0 +1,1735 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ks/call  Ks/call  name    
+ 85.04   1329.33  1329.33 8262516957     0.00     0.00  cvOneDLinearSolver::scalv(double*, double*, long)
+  6.79   1435.43   106.09     3414     0.00     0.00  cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double)
+  2.53   1474.96    39.53     2187     0.00     0.00  cvOneDSkylineMatrix::Clear()
+  1.48   1498.03    23.07     1707     0.00     0.00  cvOneDLinearSolver::solvUT(double*, double*, double*, double*, long*, long)
+  1.11   1515.33    17.30 660786036     0.00     0.00  cvOneDMaterialLinear::Getr1(double) const
+  0.50   1523.08     7.75 21345120     0.00     0.00  cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long)
+  0.37   1528.88     5.80 128766186     0.00     0.00  cvOneDMaterialLinear::GetProperty(char*) const
+  0.37   1534.61     5.73 21345120     0.00     0.00  cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long)
+  0.34   1539.97     5.36 430602804     0.00     0.00  cvOneDFiniteElement::Evaluate(double, double*, double*, double*) const
+  0.27   1544.25     4.28 170760960     0.00     0.00  cvOneDMaterialLinear::GetDr1Dz(double) const
+  0.21   1547.60     3.35 170760960     0.00     0.00  GetModulus(double*, double*)
+  0.10   1549.15     1.55 85380480     0.00     0.00  cvOneDMaterialLinear::GetIntegralpD2S(double, double) const
+  0.08   1550.39     1.24 90084012     0.00     0.00  cvOneDMaterialLinear::GetPressure(double, double) const
+  0.07   1551.56     1.17 21345120     0.00     0.00  cvOneDSkylineMatrix::Add(cvOneDDenseMatrix&)
+  0.07   1552.66     1.10 697845456     0.00     0.00  cvOneDDenseMatrix::Add(long, long, double)
+  0.07   1553.73     1.07 398862168     0.00     0.00  cvOneDMaterialLinear::GetS1(double) const
+  0.06   1554.74     1.01 85380480     0.00     0.00  cvOneDMaterialLinear::GetDpDz(double, double) const
+  0.06   1555.73     0.99 91162908     0.00     0.00  cvOneDMaterialLinear::GetDpDS(double, double) const
+  0.04   1556.41     0.68 44772264     0.00     0.00  cvOneDMaterialLinear::GetIntegralpS(double, double) const
+  0.04   1556.99     0.58 128080480     0.00     0.00  cvOneDSubdomain::GetConnectivity(long, long*) const
+  0.03   1557.53     0.54 42690240     0.00     0.00  cvOneDMaterialLinear::GetN(double) const
+  0.03   1558.01     0.48 85380480     0.00     0.00  cvOneDMaterialLinear::GetDS1Dz(double) const
+  0.03   1558.48     0.47 341521920     0.00     0.00  cvOneDFiniteElement::Interpolate(double, double*) const
+  0.02   1558.86     0.38 85380480     0.00     0.00  cvOneDSubdomain::GetNodes(long, double*) const
+  0.02   1559.22     0.36 385946082     0.00     0.00  cvOneDFEAVector::Get(long) const
+  0.02   1559.58     0.36 398862168     0.00     0.00  cvOneDMaterialLinear::GetEHR(double) const
+  0.02   1559.92     0.34 10860642     0.00     0.00  cvOneDSkylineMatrix::AddValue(long, long, double)
+  0.02   1560.23     0.31 21346827     0.00     0.00  cvOneDFEAVector::Add(cvOneDFEAVector&)
+  0.02   1560.47     0.24 85390240     0.00     0.00  cvOneDMthModelBase::GetEquationNumbers(long, long*, long)
+  0.01   1560.67     0.20 138953232     0.00     0.00  cvOneDSkylineMatrix::GetPosition(long, long) const
+  0.01   1560.85     0.18                             cvOneDDenseMatrix::Set(long, long, double)
+  0.01   1561.01     0.16 181278243     0.00     0.00  cvOneDFEAVector::Add(long, double)
+  0.01   1561.17     0.16 42690240     0.00     0.00  cvOneDSubdomain::GetElement(long) const
+  0.01   1561.32     0.15 42690240     0.00     0.00  cvOneDMthSegmentModel::N_MinorLoss(long)
+  0.01   1561.45     0.13     6561     0.00     0.00  cvOneDSkylineMatrix::GetNumberOfEntriesIn(long) const
+  0.01   1561.57     0.12     1707     0.00     0.00  cvOneDLinearSolver::solvLT(double*, double*, long*, long)
+  0.01   1561.68     0.11     4374     0.00     0.00  cvOneDSkylineMatrix::GetColumnEntries(long, long*) const
+  0.01   1561.78     0.10                             cvOneDMaterialLinear::GetRefWaveSpeed(double) const
+  0.01   1561.87     0.09 42690240     0.00     0.00  cvOneDQuadrature::Get(double*, double*) const
+  0.01   1561.95     0.08 122547579     0.00     0.00  cvOneDFEAVector::operator[](long)
+  0.01   1562.03     0.08   811377     0.00     0.00  cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*)
+  0.01   1562.11     0.08        1     0.00     0.00  cvOneDMaterialLinear::SetMaterialType(double)
+  0.00   1562.18     0.07 78199860     0.00     0.00  cvOneDSubdomain::GetNumberOfElements() const
+  0.00   1562.25     0.07     4374     0.00     0.00  cvOneDFEAVector::Norm(normType, int, int, int) const
+  0.00   1562.31     0.06     2187     0.00     0.00  cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*)
+  0.00   1562.37     0.06   811377     0.00     0.00  cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*)
+  0.00   1562.43     0.06        1     0.00     0.00  cvOneDBFSolver::postprocess_Text()
+  0.00   1562.48     0.05 85380480     0.00     0.00  cvOneDMaterialLinear::GetOutflowFunction(double, double) const
+  0.00   1562.53     0.05 42690240     0.00     0.00  cvOneDFiniteElement::Set(double*, long*)
+  0.00   1562.58     0.05 21345120     0.00     0.00  cvOneDFEAVector::SetEquationNumbers(long*)
+  0.00   1562.63     0.05  1850202     0.00     0.00  cvOneDMaterialLinear::GetD2pDS2(double, double) const
+  0.00   1562.67     0.04 21345120     0.00     0.00  cvOneDDenseMatrix::SetEquationNumbers(long*)
+  0.00   1562.71     0.04     1707     0.00     0.00  cvOneDFEAVector::CheckPositive(int, int, int)
+  0.00   1562.75     0.04      481     0.00     0.00  cvOneDFEAVector::operator=(cvOneDFEAVector const&)
+  0.00   1562.79     0.04      476     0.00     0.00  cvOneDMaterialLinear::SetAreas_and_length(double, double, double)
+  0.00   1562.83     0.04                             cvOneDMthModelBase::~cvOneDMthModelBase()
+  0.00   1562.86     0.04  5799788     0.00     0.00  cvOneDSubdomain::GetNumberOfNodes() const
+  0.00   1562.89     0.03  7878582     0.00     0.00  cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long)
+  0.00   1562.92     0.03   811377     0.00     0.00  cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*)
+  0.00   1562.95     0.03   231822     0.00     0.00  cvOneDMaterialLinear::GetArea(double, double) const
+  0.00   1562.97     0.02 21345120     0.00     0.00  cvOneDDenseMatrix::Clear()
+  0.00   1562.99     0.02   231822     0.00     0.00  cvOneDLinearSolver::AddFlux(long, double*, double*)
+  0.00   1563.01     0.02     2187     0.00     0.00  cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*)
+  0.00   1563.03     0.02                             cvOneDQuadrature::~cvOneDQuadrature()
+  0.00   1563.05     0.02                             cvOneDMaterialLinear::~cvOneDMaterialLinear()
+  0.00   1563.06     0.01 42690240     0.00     0.00  cvOneDMaterialLinear::GetDOutflowDp(double, double) const
+  0.00   1563.07     0.01 21351688     0.00     0.00  cvOneDFEAVector::Clear()
+  0.00   1563.08     0.01   811377     0.00     0.00  cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*)
+  0.00   1563.09     0.01    21071     0.00     0.00  __gnu_cxx::__normal_iterator<char*, std::string> std::__find_if<__gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char> >(__gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char>, std::random_access_iterator_tag)
+  0.00   1563.10     0.01     2187     0.00     0.00  cvOneDFEAVector::~cvOneDFEAVector()
+  0.00   1563.11     0.01     2187     0.00     0.00  cvOneDMthModelBase::ApplyBoundaryConditions()
+  0.00   1563.12     0.01     2187     0.00     0.00  cvOneDSkylineMatrix::GetRowEntries(long, long*) const
+  0.00   1563.13     0.01      476     0.00     0.00  cvOneDFiniteElement::cvOneDFiniteElement()
+  0.00   1563.14     0.01        1     0.00     1.56  cvOneDBFSolver::GenerateSolution()
+  0.00   1563.15     0.01        1     0.00     0.00  cvOneDSkylineMatrix::cvOneDSkylineMatrix(long, long*, char const*)
+  0.00   1563.16     0.01                             cot(double)
+  0.00   1563.17     0.01                             cvOneDFEAVector::operator+=(cvOneDFEAVector const&)
+  0.00   1563.18     0.01                             cvOneDDenseMatrix::cvOneDDenseMatrix(long, long*, char const*)
+  0.00   1563.18     0.00  2092260     0.00     0.00  cvOneDSubdomain::GetNodalCoordinate(long) const
+  0.00   1563.18     0.00   300226     0.00     0.00  char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag)
+  0.00   1563.18     0.00    39040     0.00     0.00  max(long, long)
+  0.00   1563.18     0.00    29646     0.00     0.00  boost::detail::function::functor_manager<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >::manage(boost::detail::function::function_buffer const&, boost::detail::function::function_buffer&, boost::detail::function::functor_manager_operation_type)
+  0.00   1563.18     0.00    21071     0.00     0.00  boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >, boost::iterator_range<__gnu_cxx::__normal_iterator<char*, std::string> >, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string> >::invoke(boost::detail::function::function_buffer&, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>)
+  0.00   1563.18     0.00    15309     0.00     0.00  cvOneDSkylineMatrix::SetValue(long, long, double)
+  0.00   1563.18     0.00    10902     0.00     0.00  void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&)
+  0.00   1563.18     0.00    10606     0.00     0.00  min(long, long*)
+  0.00   1563.18     0.00     3414     0.00     0.00  cvOneDSkylineMatrix::GetDimension() const
+  0.00   1563.18     0.00     3294     0.00     0.00  boost::detail::function::has_empty_target(...)
+  0.00   1563.18     0.00     3294     0.00     0.00  std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >)
+  0.00   1563.18     0.00     3294     0.00     0.00  void std::__introsort_loop<char*, long>(char*, char*, long)
+  0.00   1563.18     0.00     2667     0.00     0.00  cvOneDMthModelBase::GetFlowRate()
+  0.00   1563.18     0.00     2240     0.00     0.00  cvOneDFEAVector::Rename(char const*)
+  0.00   1563.18     0.00     2191     0.00     0.00  cvOneDFEAVector::CreateVector(long, char const*)
+  0.00   1563.18     0.00     2191     0.00     0.00  cvOneDFEAVector::cvOneDFEAVector(long, char const*)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDDenseMatrix::CreateMatrix(long, char const*)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDDenseMatrix::cvOneDDenseMatrix(long, char const*)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDDenseMatrix::~cvOneDDenseMatrix()
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDLinearSolver::SetSolution(long, double)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDSkylineMatrix::ClearColumn(long)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDSkylineMatrix::ClearRow(long)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDMthBranchModel::FormNewtonLHS(cvOneDSkylineMatrix*)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDMthBranchModel::FormNewtonRHS(cvOneDFEAVector*)
+  0.00   1563.18     0.00     2187     0.00     0.00  cvOneDSkylineMatrix::GetColumnEntries(long, long*, double*) const
+  0.00   1563.18     0.00     1707     0.00     0.00  cvOneDLinearSolver::Solve(cvOneDFEAVector&)
+  0.00   1563.18     0.00     1707     0.00     0.00  cvOneDMthModelBase::SetBoundaryConditions()
+  0.00   1563.18     0.00     1707     0.00     0.00  cvOneDSkylineMatrix::GetPosition()
+  0.00   1563.18     0.00     1707     0.00     0.00  cvOneDSkylineMatrix::GetDiagonalEntries()
+  0.00   1563.18     0.00     1707     0.00     0.00  cvOneDSkylineMatrix::GetLowerDiagonalEntries()
+  0.00   1563.18     0.00     1707     0.00     0.00  cvOneDSkylineMatrix::GetUpperDiagonalEntries()
+  0.00   1563.18     0.00     1696     0.00     0.00  void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&)
+  0.00   1563.18     0.00     1428     0.00     0.00  cvOneDSegment::getSegmentID()
+  0.00   1563.18     0.00     1218     0.00     0.00  getListIDWithStringKey(std::string, std::vector<std::string, std::allocator<std::string> >)
+  0.00   1563.18     0.00     1113     0.00     0.00  cvOneDModel::getJoint(long)
+  0.00   1563.18     0.00      960     0.00     0.00  cvOneDMthModelBase::TimeUpdate(double, double)
+  0.00   1563.18     0.00      953     0.00     0.00  cvOneDModel::getSegment(long)
+  0.00   1563.18     0.00      952     0.00     0.00  cvOneDSegment::getNumElements()
+  0.00   1563.18     0.00      952     0.00     0.00  cvOneDSegment::getSegmentLength()
+  0.00   1563.18     0.00      928     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)
+  0.00   1563.18     0.00      846     0.00     0.00  cvOneDMthBranchModel::GetUpmostEqnNumber(long, long)
+  0.00   1563.18     0.00      675     0.00     0.00  std::string boost::algorithm::detail::transform_range_copy<std::string, std::string, boost::algorithm::detail::to_upperF<char> >(std::string const&, boost::algorithm::detail::to_upperF<char>)
+  0.00   1563.18     0.00      672     0.00     0.00  __gnu_cxx::__enable_if<std::__is_char<char>::__value, bool>::__type std::operator==<char>(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  0.00   1563.18     0.00      582     0.00     0.00  cvOneDModel::addNode(cvOneDNode*)
+  0.00   1563.18     0.00      582     0.00     0.00  cvOneDModelManager::CreateNode(char*, double, double, double)
+  0.00   1563.18     0.00      480     0.00     0.00  cvOneDMthModelBase::CheckMassBalance()
+  0.00   1563.18     0.00      479     0.00     0.00  cvOneDModel::getNumberOfSegments()
+  0.00   1563.18     0.00      477     0.00     0.00  cvOneDMaterialLinear::cvOneDMaterialLinear()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDModel::addSegment(cvOneDSegment*)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDModel::getModelName()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::getOutletZ()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::getMeshType()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setMeshType(MeshTypeScope::MeshType)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setSegmentID(long)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::getInitInletS()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::getInitOutletS()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::getSegmentName()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setInOutJoints(long, long)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setNumElements(long)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setParentModel(void*)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setSegmentName(char*)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::setSegmentLength(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::getInletZ()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSegment::cvOneDSegment(double, double, double, bool)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDBFSolver::CalcInitProps(long)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetMeshType(MeshTypeScope::MeshType)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::GetInitInletS()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetBoundValue(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetInitInletS(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetupMaterial(int)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::GetInitOutletS()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::GetInitialFlow()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetInitOutletS(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetInitialFlow(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetNumberOfNodes(long)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetInitialdFlowdT(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetInitialPressure(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::SetNumberOfElements(long)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::Init(double, double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDSubdomain::cvOneDSubdomain()
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDMaterialLinear::SetPeriod(double)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDMaterialLinear::operator=(cvOneDMaterialLinear const&)
+  0.00   1563.18     0.00      476     0.00     0.00  cvOneDMaterialManager::GetNewInstance(int)
+  0.00   1563.18     0.00      476     0.00     0.00  std::vector<cvOneDSegment*, std::allocator<cvOneDSegment*> >::_M_default_append(unsigned long)
+  0.00   1563.18     0.00      371     0.00     0.00  cvOneDModel::addJoint(cvOneDJoint*)
+  0.00   1563.18     0.00      371     0.00     0.00  cvOneDModelManager::CreateJoint(char*, double, double, double, int, int, int*, int*)
+  0.00   1563.18     0.00      222     0.00     0.00  std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&)
+  0.00   1563.18     0.00      129     0.00     0.00  void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string const&>(std::string const&)
+  0.00   1563.18     0.00      110     0.00     0.00  cvOneDDataTable::setName(std::string)
+  0.00   1563.18     0.00      110     0.00     0.00  cvOneDDataTable::setTime(std::vector<double, std::allocator<double> >)
+  0.00   1563.18     0.00      110     0.00     0.00  cvOneDDataTable::setType(std::string)
+  0.00   1563.18     0.00      110     0.00     0.00  cvOneDDataTable::setValues(std::vector<double, std::allocator<double> >)
+  0.00   1563.18     0.00      110     0.00     0.00  cvOneDDataTable::cvOneDDataTable()
+  0.00   1563.18     0.00      110     0.00     0.00  cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >)
+  0.00   1563.18     0.00      110     0.00     0.00  std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::push_back(std::vector<double, std::allocator<double> > const&)
+  0.00   1563.18     0.00      107     0.00     0.00  getDataTableIDFromStringKey(std::string)
+  0.00   1563.18     0.00       96     0.00     0.00  void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&)
+  0.00   1563.18     0.00       84     0.00     0.00  void std::vector<long, std::allocator<long> >::_M_emplace_back_aux<long>(long&&)
+  0.00   1563.18     0.00       50     0.00     0.00  cvOneDString::~cvOneDString()
+  0.00   1563.18     0.00       48     0.00     0.00  cvOneDString::data()
+  0.00   1563.18     0.00       48     0.00     0.00  cvOneDString::cvOneDString(cvOneDString const&)
+  0.00   1563.18     0.00       48     0.00     0.00  cvOneDString::operator=(cvOneDString const&)
+  0.00   1563.18     0.00       48     0.00     0.00  cvOneDString::operator+=(char const*)
+  0.00   1563.18     0.00       48     0.00     0.00  cvOneDString::operator+(char const*)
+  0.00   1563.18     0.00       30     0.00     0.00  void std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> >::_M_emplace_back_aux<cvOneDFEAJoint* const&>(cvOneDFEAJoint* const&)
+  0.00   1563.18     0.00       30     0.00     0.00  void std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> >::_M_emplace_back_aux<cvOneDSubdomain* const&>(cvOneDSubdomain* const&)
+  0.00   1563.18     0.00       20     0.00     0.00  void std::vector<std::vector<long, std::allocator<long> >, std::allocator<std::vector<long, std::allocator<long> > > >::_M_emplace_back_aux<std::vector<long, std::allocator<long> > const&>(std::vector<long, std::allocator<long> > const&)
+  0.00   1563.18     0.00       14     0.00     0.00  main
+  0.00   1563.18     0.00       11     0.00     0.00  void std::vector<cvOneDNode*, std::allocator<cvOneDNode*> >::_M_emplace_back_aux<cvOneDNode* const&>(cvOneDNode* const&)
+  0.00   1563.18     0.00       10     0.00     0.00  void std::vector<cvOneDJoint*, std::allocator<cvOneDJoint*> >::_M_emplace_back_aux<cvOneDJoint* const&>(cvOneDJoint* const&)
+  0.00   1563.18     0.00        8     0.00     0.00  void std::vector<cvOneDDataTable*, std::allocator<cvOneDDataTable*> >::_M_emplace_back_aux<cvOneDDataTable* const&>(cvOneDDataTable* const&)
+  0.00   1563.18     0.00        8     0.00     0.00  void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_emplace_back_aux<std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> > const&)
+  0.00   1563.18     0.00        8     0.00     0.00  void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&)
+  0.00   1563.18     0.00        8     0.00     0.00  _init
+  0.00   1563.18     0.00        6     0.00     0.00  void std::vector<double, std::allocator<double> >::emplace_back<double>(double&&)
+  0.00   1563.18     0.00        2     0.00     0.00  checkForPositiveVal(std::vector<double, std::allocator<double> >)
+  0.00   1563.18     0.00        2     0.00     0.00  cvOneDBFSolver::AddOneModel(cvOneDMthModelBase*)
+  0.00   1563.18     0.00        2     0.00     0.00  cvOneDMthModelBase::EquationInitialize(cvOneDFEAVector const*, cvOneDFEAVector*)
+  0.00   1563.18     0.00        2     0.00     0.00  cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&)
+  0.00   1563.18     0.00        2     0.00     0.00  void std::vector<cvOneDMthModelBase*, std::allocator<cvOneDMthModelBase*> >::_M_emplace_back_aux<cvOneDMthModelBase* const&>(cvOneDMthModelBase* const&)
+  0.00   1563.18     0.00        1     0.00     0.00  readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >)
+  0.00   1563.18     0.00        1     0.00     1.56  createAndRunModel(cvOptions*)
+  0.00   1563.18     0.00        1     0.00     0.00  sum(long, long*)
+  0.00   1563.18     0.00        1     0.00     0.00  clear(long, long*)
+  0.00   1563.18     0.00        1     0.00     0.00  readModel(std::string, cvOptions*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDModel::setModelID(long)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDModel::setModelName(char*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDModel::getNumberOfJoints()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDModel::cvOneDModel()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDString::cvOneDString(char const*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDString::cvOneDString()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDVector<cvOneDVector<double> >::SetSize(int)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDSegment::getInitialFlow()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDSegment::getInitialPressure()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetMaxStep(long)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetModelPtr(cvOneDModel*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetStepSize(long)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetDeltaTime(double)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetQuadPoints(long)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetInletBCType(BoundCondTypeScope::BoundCondType)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::DefineInletFlow(double*, double*, int)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::DefineMthModels()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::CreateGlobalArrays()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::QuerryModelInformation()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDBFSolver::SetConvergenceCriteria(double)
+  0.00   1563.18     0.00        1     0.00     1.56  cvOneDBFSolver::Solve()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDQuadrature::cvOneDQuadrature(int)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDLinearSolver::SetLHS(cvOneDSkylineMatrix*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDLinearSolver::SetRHS(cvOneDFEAVector*)
+  0.00   1563.18     0.00        1     0.00     1.56  cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDModelManager::cvOneDModelManager(char*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMthModelBase::SetInflowRate(double*, double*, int, double)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDSkylineMatrix::Set(long, long*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMthBranchModel::cvOneDMthBranchModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMaterialManager::AddNewMaterial(int, cvOneDMaterial*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMaterialManager::AddNewMaterialLinear(double, double, double, double)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMaterialManager::cvOneDMaterialManager()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMthSegmentModel::cvOneDMthSegmentModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&, long)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printToFile(std::string)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printNodeData(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printJointData(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printModelName(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printDataTables(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printSegmentData(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printMaterialData(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printSolverOptions(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printJointInletData(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::printJointOutletData(_IO_FILE*)
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::checkSegmentLengthConsistency()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::check()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::cvOptions()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOptions::~cvOptions()
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMthModelBase::GetTotalNumberOfEquations() const
+  0.00   1563.18     0.00        1     0.00     0.00  cvOneDMthModelBase::GetNumberOfElementEquations() const
+  0.00   1563.18     0.00        1     0.00     0.00  void std::vector<cvOneDModel*, std::allocator<cvOneDModel*> >::_M_emplace_back_aux<cvOneDModel* const&>(cvOneDModel* const&)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 1563.18 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00 1562.79                 runOneDSolver(std::string) [1]
+                0.00 1562.78       1/1           createAndRunModel(cvOptions*) [2]
+                0.00    0.01       1/1           readModel(std::string, cvOptions*) [94]
+                0.00    0.00       1/1           cvOptions::cvOptions() [258]
+                0.00    0.00       1/1           cvOptions::check() [257]
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+                0.00    0.00       1/1           cvOptions::~cvOptions() [259]
+-----------------------------------------------
+                0.00 1562.78       1/1           runOneDSolver(std::string) [1]
+[2]    100.0    0.00 1562.78       1         createAndRunModel(cvOptions*) [2]
+                0.00 1562.70       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+                0.00    0.08       1/1           cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*) [59]
+                0.00    0.00    1218/1218        getListIDWithStringKey(std::string, std::vector<std::string, std::allocator<std::string> >) [137]
+                0.00    0.00     582/582         cvOneDModelManager::CreateNode(char*, double, double, double) [147]
+                0.00    0.00     477/300226      char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+                0.00    0.00     371/371         cvOneDModelManager::CreateJoint(char*, double, double, double, int, int, int*, int*) [186]
+                0.00    0.00     110/110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+                0.00    0.00     107/107         getDataTableIDFromStringKey(std::string) [196]
+                0.00    0.00       1/1           cvOneDModelManager::cvOneDModelManager(char*) [241]
+                0.00    0.00       1/953         cvOneDModel::getSegment(long) [140]
+-----------------------------------------------
+                0.00 1562.70       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[3]    100.0    0.00 1562.70       1         cvOneDBFSolver::Solve() [3]
+                0.01 1562.53       1/1           cvOneDBFSolver::GenerateSolution() [5]
+                0.06    0.04       1/1           cvOneDBFSolver::postprocess_Text() [54]
+                0.00    0.05       1/1           cvOneDBFSolver::QuerryModelInformation() [71]
+                0.00    0.01       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.00    0.00     476/476         cvOneDBFSolver::CalcInitProps(long) [101]
+                0.00    0.00       1/1           cvOneDBFSolver::DefineMthModels() [104]
+                0.00    0.00       1/21351688     cvOneDFEAVector::Clear() [85]
+                0.00    0.00       1/2           cvOneDBFSolver::AddOneModel(cvOneDMthModelBase*) [216]
+                0.00    0.00       1/479         cvOneDModel::getNumberOfSegments() [148]
+-----------------------------------------------
+                0.00 1562.70       1/1           createAndRunModel(cvOptions*) [2]
+[4]    100.0    0.00 1562.70       1         cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+                0.00 1562.70       1/1           cvOneDBFSolver::Solve() [3]
+                0.00    0.00       1/1           cvOneDBFSolver::SetModelPtr(cvOneDModel*) [231]
+                0.00    0.00       1/1           cvOneDBFSolver::SetStepSize(long) [232]
+                0.00    0.00       1/1           cvOneDBFSolver::SetDeltaTime(double) [233]
+                0.00    0.00       1/1           cvOneDBFSolver::SetQuadPoints(long) [234]
+                0.00    0.00       1/1           cvOneDBFSolver::SetMaxStep(long) [230]
+                0.00    0.00       1/1           cvOneDBFSolver::SetInletBCType(BoundCondTypeScope::BoundCondType) [235]
+                0.00    0.00       1/1           cvOneDBFSolver::SetConvergenceCriteria(double) [237]
+                0.00    0.00       1/1           cvOneDBFSolver::DefineInletFlow(double*, double*, int) [236]
+-----------------------------------------------
+                0.01 1562.53       1/1           cvOneDBFSolver::Solve() [3]
+[5]    100.0    0.01 1562.53       1         cvOneDBFSolver::GenerateSolution() [5]
+                0.00 1458.62    1707/1707        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+                0.06   71.27    2187/2187        cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+                0.02   30.95    2187/2187        cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+                0.00    0.68    2187/2187        cvOneDMthBranchModel::FormNewtonLHS(cvOneDSkylineMatrix*) [32]
+                0.01    0.41    2187/2187        cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.00    0.34    2187/2187        cvOneDMthBranchModel::FormNewtonRHS(cvOneDFEAVector*) [44]
+                0.07    0.00    4374/4374        cvOneDFEAVector::Norm(normType, int, int, int) const [63]
+                0.04    0.02    1707/1707        cvOneDFEAVector::CheckPositive(int, int, int) [64]
+                0.04    0.00     481/481         cvOneDFEAVector::operator=(cvOneDFEAVector const&) [74]
+                0.02    0.00 17472852/385946082     cvOneDFEAVector::Get(long) const [41]
+                0.00    0.00    1707/1707        cvOneDMthModelBase::SetBoundaryConditions() [99]
+                0.00    0.00     480/480         cvOneDMthModelBase::CheckMassBalance() [100]
+                0.00    0.00    1707/21346827     cvOneDFEAVector::Add(cvOneDFEAVector&) [39]
+                0.00    0.00    2187/21351688     cvOneDFEAVector::Clear() [85]
+                0.00    0.00     960/960         cvOneDMthModelBase::TimeUpdate(double, double) [139]
+                0.00    0.00      50/50          cvOneDString::~cvOneDString() [199]
+                0.00    0.00      49/2240        cvOneDFEAVector::Rename(char const*) [125]
+                0.00    0.00      48/48          cvOneDString::operator+(char const*) [204]
+                0.00    0.00      48/48          cvOneDString::operator=(cvOneDString const&) [202]
+                0.00    0.00      48/48          cvOneDString::data() [200]
+                0.00    0.00       2/2           cvOneDMthModelBase::EquationInitialize(cvOneDFEAVector const*, cvOneDFEAVector*) [217]
+                0.00    0.00       1/1           cvOneDVector<cvOneDVector<double> >::SetSize(int) [227]
+                0.00    0.00       1/1           cvOneDString::cvOneDString(char const*) [225]
+                0.00    0.00       1/1           cvOneDString::cvOneDString() [226]
+-----------------------------------------------
+              106.09 1352.53    3414/3414        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+[6]     93.3  106.09 1352.53    3414         cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double) [6]
+             1323.48    0.00 8226127131/8262516957     cvOneDLinearSolver::scalv(double*, double*, long) [8]
+               23.07    0.00    1707/1707        cvOneDLinearSolver::solvUT(double*, double*, double*, double*, long*, long) [14]
+                0.12    5.85    1707/1707        cvOneDLinearSolver::solvLT(double*, double*, long*, long) [20]
+-----------------------------------------------
+                0.00 1458.62    1707/1707        cvOneDBFSolver::GenerateSolution() [5]
+[7]     93.3    0.00 1458.62    1707         cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+              106.09 1352.53    3414/3414        cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double) [6]
+                0.00    0.00    3414/3414        cvOneDSkylineMatrix::GetDimension() const [121]
+                0.00    0.00    1707/1707        cvOneDSkylineMatrix::GetPosition() [131]
+                0.00    0.00    1707/1707        cvOneDSkylineMatrix::GetLowerDiagonalEntries() [133]
+                0.00    0.00    1707/1707        cvOneDSkylineMatrix::GetUpperDiagonalEntries() [134]
+                0.00    0.00    1707/1707        cvOneDSkylineMatrix::GetDiagonalEntries() [132]
+-----------------------------------------------
+                5.85    0.00 36389826/8262516957     cvOneDLinearSolver::solvLT(double*, double*, long*, long) [20]
+             1323.48    0.00 8226127131/8262516957     cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double) [6]
+[8]     85.0 1329.33    0.00 8262516957         cvOneDLinearSolver::scalv(double*, double*, long) [8]
+-----------------------------------------------
+                0.06   71.27    2187/2187        cvOneDBFSolver::GenerateSolution() [5]
+[9]      4.6    0.06   71.27    2187         cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+               39.53    0.00    2187/2187        cvOneDSkylineMatrix::Clear() [10]
+                7.75   22.61 21345120/21345120     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                1.17    0.18 21345120/21345120     cvOneDSkylineMatrix::Add(cvOneDDenseMatrix&) [29]
+                0.02    0.00 22386132/78199860     cvOneDSubdomain::GetNumberOfElements() const [62]
+                0.00    0.00    2187/2187        cvOneDDenseMatrix::CreateMatrix(long, char const*) [128]
+                0.00    0.00    2187/2187        cvOneDDenseMatrix::cvOneDDenseMatrix(long, char const*) [129]
+                0.00    0.00    2187/2187        cvOneDDenseMatrix::~cvOneDDenseMatrix() [130]
+-----------------------------------------------
+               39.53    0.00    2187/2187        cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[10]     2.5   39.53    0.00    2187         cvOneDSkylineMatrix::Clear() [10]
+-----------------------------------------------
+                0.02   30.95    2187/2187        cvOneDBFSolver::GenerateSolution() [5]
+[11]     2.0    0.02   30.95    2187         cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+                5.73   24.80 21345120/21345120     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                0.31    0.08 21345120/21346827     cvOneDFEAVector::Add(cvOneDFEAVector&) [39]
+                0.02    0.00 22386132/78199860     cvOneDSubdomain::GetNumberOfElements() const [62]
+                0.01    0.00    2187/2187        cvOneDFEAVector::~cvOneDFEAVector() [89]
+                0.00    0.00    4374/21351688     cvOneDFEAVector::Clear() [85]
+                0.00    0.00    2187/2191        cvOneDFEAVector::CreateVector(long, char const*) [126]
+                0.00    0.00    2187/2191        cvOneDFEAVector::cvOneDFEAVector(long, char const*) [127]
+-----------------------------------------------
+                5.73   24.80 21345120/21345120     cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+[12]     2.0    5.73   24.80 21345120         cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                0.78    3.70 42690240/85380480     cvOneDMaterialLinear::GetIntegralpD2S(double, double) const [17]
+                0.51    3.46 42690240/85380480     cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+                0.29    2.66 213451200/341521920     cvOneDFiniteElement::Interpolate(double, double*) const [24]
+                2.88    0.00 64035360/128766186     cvOneDMaterialLinear::GetProperty(char*) const [21]
+                0.46    2.39 42690240/91162908     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+                0.68    1.33 44540442/44772264     cvOneDMaterialLinear::GetIntegralpS(double, double) const [28]
+                0.60    1.29 43499430/90084012     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                1.68    0.00 85380480/170760960     GetModulus(double*, double*) [27]
+                0.55    0.00 44540442/430602804     cvOneDFiniteElement::Evaluate(double, double*, double*, double*) const [22]
+                0.08    0.47 21345120/42690240     cvOneDMthSegmentModel::N_MinorLoss(long) [31]
+                0.08    0.22 21345120/42690240     cvOneDSubdomain::GetElement(long) const [34]
+                0.16    0.00 170760960/385946082     cvOneDFEAVector::Get(long) const [41]
+                0.06    0.10 21345120/85390240     cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [33]
+                0.15    0.00 174461364/181278243     cvOneDFEAVector::Add(long, double) [49]
+                0.10    0.00 21345120/85380480     cvOneDSubdomain::GetNodes(long, double*) const [40]
+                0.05    0.00 21345120/21345120     cvOneDFEAVector::SetEquationNumbers(long*) [70]
+                0.05    0.00 21345120/42690240     cvOneDQuadrature::Get(double*, double*) const [57]
+                0.03    0.00 42690240/85380480     cvOneDMaterialLinear::GetOutflowFunction(double, double) const [68]
+                0.01    0.00 16708680/78199860     cvOneDSubdomain::GetNumberOfElements() const [62]
+                0.01    0.00 21345120/21351688     cvOneDFEAVector::Clear() [85]
+                0.00    0.00 1041012/2092260     cvOneDSubdomain::GetNodalCoordinate(long) const [115]
+-----------------------------------------------
+                7.75   22.61 21345120/21345120     cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[13]     1.9    7.75   22.61 21345120         cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.78    3.70 42690240/85380480     cvOneDMaterialLinear::GetIntegralpD2S(double, double) const [17]
+                0.51    3.46 42690240/85380480     cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+                0.48    2.49 44540442/91162908     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+                2.88    0.00 64035360/128766186     cvOneDMaterialLinear::GetProperty(char*) const [21]
+                0.60    1.29 43499430/90084012     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.18    1.59 128070720/341521920     cvOneDFiniteElement::Interpolate(double, double*) const [24]
+                1.68    0.00 85380480/170760960     GetModulus(double*, double*) [27]
+                1.10    0.00 697845456/697845456     cvOneDDenseMatrix::Add(long, long, double) [30]
+                0.55    0.00 44540442/430602804     cvOneDFiniteElement::Evaluate(double, double*, double*, double*) const [22]
+                0.08    0.47 21345120/42690240     cvOneDMthSegmentModel::N_MinorLoss(long) [31]
+                0.08    0.22 21345120/42690240     cvOneDSubdomain::GetElement(long) const [34]
+                0.06    0.10 21345120/85390240     cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [33]
+                0.10    0.00 21345120/85380480     cvOneDSubdomain::GetNodes(long, double*) const [40]
+                0.08    0.00 85380480/385946082     cvOneDFEAVector::Get(long) const [41]
+                0.05    0.00 21345120/42690240     cvOneDQuadrature::Get(double*, double*) const [57]
+                0.04    0.00 21345120/21345120     cvOneDDenseMatrix::SetEquationNumbers(long*) [73]
+                0.03    0.00 42690240/85380480     cvOneDMaterialLinear::GetOutflowFunction(double, double) const [68]
+                0.02    0.00 21345120/21345120     cvOneDDenseMatrix::Clear() [80]
+                0.01    0.00 16708680/78199860     cvOneDSubdomain::GetNumberOfElements() const [62]
+                0.01    0.00 42690240/42690240     cvOneDMaterialLinear::GetDOutflowDp(double, double) const [84]
+                0.00    0.00 1041012/2092260     cvOneDSubdomain::GetNodalCoordinate(long) const [115]
+-----------------------------------------------
+               23.07    0.00    1707/1707        cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double) [6]
+[14]     1.5   23.07    0.00    1707         cvOneDLinearSolver::solvUT(double*, double*, double*, double*, long*, long) [14]
+-----------------------------------------------
+                2.24    0.00 85380480/660786036     cvOneDMaterialLinear::GetDS1Dz(double) const [23]
+                2.24    0.00 85380480/660786036     cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+                2.39    0.00 91162908/660786036     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+               10.44    0.00 398862168/660786036     cvOneDMaterialLinear::GetS1(double) const [16]
+[15]     1.1   17.30    0.00 660786036         cvOneDMaterialLinear::Getr1(double) const [15]
+-----------------------------------------------
+                0.00    0.01  231822/398862168     cvOneDMaterialLinear::GetArea(double, double) const [77]
+                0.00    0.05 1850202/398862168     cvOneDMaterialLinear::GetD2pDS2(double, double) const [53]
+                0.12    1.17 44772264/398862168     cvOneDMaterialLinear::GetIntegralpS(double, double) const [28]
+                0.23    2.24 85380480/398862168     cvOneDMaterialLinear::GetIntegralpD2S(double, double) const [17]
+                0.23    2.24 85380480/398862168     cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+                0.24    2.36 90084012/398862168     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.24    2.39 91162908/398862168     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+[16]     0.7    1.07   10.44 398862168         cvOneDMaterialLinear::GetS1(double) const [16]
+               10.44    0.00 398862168/660786036     cvOneDMaterialLinear::Getr1(double) const [15]
+-----------------------------------------------
+                0.78    3.70 42690240/85380480     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.78    3.70 42690240/85380480     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[17]     0.6    1.55    7.40 85380480         cvOneDMaterialLinear::GetIntegralpD2S(double, double) const [17]
+                0.48    4.38 85380480/85380480     cvOneDMaterialLinear::GetDS1Dz(double) const [23]
+                0.23    2.24 85380480/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                0.08    0.00 85380480/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                0.51    3.46 42690240/85380480     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.51    3.46 42690240/85380480     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[18]     0.5    1.01    6.92 85380480         cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+                0.23    2.24 85380480/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                2.24    0.00 85380480/660786036     cvOneDMaterialLinear::Getr1(double) const [15]
+                2.14    0.00 85380480/170760960     cvOneDMaterialLinear::GetDr1Dz(double) const [25]
+                0.08    0.00 85380480/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                0.00    0.01  231822/91162908     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.02    0.10 1850202/91162908     cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.02    0.10 1850202/91162908     cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+                0.46    2.39 42690240/91162908     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                0.48    2.49 44540442/91162908     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+[19]     0.4    0.99    5.10 91162908         cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+                0.24    2.39 91162908/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                2.39    0.00 91162908/660786036     cvOneDMaterialLinear::Getr1(double) const [15]
+                0.08    0.00 91162908/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                0.12    5.85    1707/1707        cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double) [6]
+[20]     0.4    0.12    5.85    1707         cvOneDLinearSolver::solvLT(double*, double*, long*, long) [20]
+                5.85    0.00 36389826/8262516957     cvOneDLinearSolver::scalv(double*, double*, long) [8]
+-----------------------------------------------
+                0.03    0.00  695466/128766186     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                2.88    0.00 64035360/128766186     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                2.88    0.00 64035360/128766186     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[21]     0.4    5.80    0.00 128766186         cvOneDMaterialLinear::GetProperty(char*) const [21]
+-----------------------------------------------
+                0.55    0.00 44540442/430602804     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.55    0.00 44540442/430602804     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                4.25    0.00 341521920/430602804     cvOneDFiniteElement::Interpolate(double, double*) const [24]
+[22]     0.3    5.36    0.00 430602804         cvOneDFiniteElement::Evaluate(double, double*, double*, double*) const [22]
+-----------------------------------------------
+                0.48    4.38 85380480/85380480     cvOneDMaterialLinear::GetIntegralpD2S(double, double) const [17]
+[23]     0.3    0.48    4.38 85380480         cvOneDMaterialLinear::GetDS1Dz(double) const [23]
+                2.24    0.00 85380480/660786036     cvOneDMaterialLinear::Getr1(double) const [15]
+                2.14    0.00 85380480/170760960     cvOneDMaterialLinear::GetDr1Dz(double) const [25]
+-----------------------------------------------
+                0.18    1.59 128070720/341521920     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.29    2.66 213451200/341521920     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[24]     0.3    0.47    4.25 341521920         cvOneDFiniteElement::Interpolate(double, double*) const [24]
+                4.25    0.00 341521920/430602804     cvOneDFiniteElement::Evaluate(double, double*, double*, double*) const [22]
+-----------------------------------------------
+                2.14    0.00 85380480/170760960     cvOneDMaterialLinear::GetDS1Dz(double) const [23]
+                2.14    0.00 85380480/170760960     cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+[25]     0.3    4.28    0.00 170760960         cvOneDMaterialLinear::GetDr1Dz(double) const [25]
+-----------------------------------------------
+                0.00    0.01  231822/90084012     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.01    0.03 1003128/90084012     cvOneDBFSolver::postprocess_Text() [54]
+                0.03    0.06 1850202/90084012     cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.60    1.29 43499430/90084012     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.60    1.29 43499430/90084012     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[26]     0.3    1.24    2.68 90084012         cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.24    2.36 90084012/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                0.08    0.00 90084012/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                1.68    0.00 85380480/170760960     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                1.68    0.00 85380480/170760960     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[27]     0.2    3.35    0.00 170760960         GetModulus(double*, double*) [27]
+-----------------------------------------------
+                0.00    0.01  231822/44772264     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.68    1.33 44540442/44772264     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[28]     0.1    0.68    1.33 44772264         cvOneDMaterialLinear::GetIntegralpS(double, double) const [28]
+                0.12    1.17 44772264/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                0.04    0.00 44772264/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                1.17    0.18 21345120/21345120     cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[29]     0.1    1.17    0.18 21345120         cvOneDSkylineMatrix::Add(cvOneDDenseMatrix&) [29]
+                0.18    0.00 128070720/138953232     cvOneDSkylineMatrix::GetPosition(long, long) const [47]
+-----------------------------------------------
+                1.10    0.00 697845456/697845456     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+[30]     0.1    1.10    0.00 697845456         cvOneDDenseMatrix::Add(long, long, double) [30]
+-----------------------------------------------
+                0.08    0.47 21345120/42690240     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.08    0.47 21345120/42690240     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[31]     0.1    0.15    0.93 42690240         cvOneDMthSegmentModel::N_MinorLoss(long) [31]
+                0.54    0.00 42690240/42690240     cvOneDMaterialLinear::GetN(double) const [36]
+                0.12    0.19 42690240/85390240     cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [33]
+                0.08    0.00 85380480/385946082     cvOneDFEAVector::Get(long) const [41]
+-----------------------------------------------
+                0.00    0.68    2187/2187        cvOneDBFSolver::GenerateSolution() [5]
+[32]     0.0    0.00    0.68    2187         cvOneDMthBranchModel::FormNewtonLHS(cvOneDSkylineMatrix*) [32]
+                0.08    0.45  811377/811377      cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+                0.01    0.13  811377/811377      cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*) [50]
+-----------------------------------------------
+                0.00    0.00    9760/85390240     cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.06    0.10 21345120/85390240     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.06    0.10 21345120/85390240     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                0.12    0.19 42690240/85390240     cvOneDMthSegmentModel::N_MinorLoss(long) [31]
+[33]     0.0    0.24    0.38 85390240         cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [33]
+                0.38    0.00 85390240/128080480     cvOneDSubdomain::GetConnectivity(long, long*) const [35]
+-----------------------------------------------
+                0.08    0.22 21345120/42690240     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.08    0.22 21345120/42690240     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[34]     0.0    0.16    0.43 42690240         cvOneDSubdomain::GetElement(long) const [34]
+                0.19    0.00 42690240/128080480     cvOneDSubdomain::GetConnectivity(long, long*) const [35]
+                0.19    0.00 42690240/85380480     cvOneDSubdomain::GetNodes(long, double*) const [40]
+                0.05    0.00 42690240/42690240     cvOneDFiniteElement::Set(double*, long*) [69]
+-----------------------------------------------
+                0.19    0.00 42690240/128080480     cvOneDSubdomain::GetElement(long) const [34]
+                0.38    0.00 85390240/128080480     cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [33]
+[35]     0.0    0.58    0.00 128080480         cvOneDSubdomain::GetConnectivity(long, long*) const [35]
+-----------------------------------------------
+                0.54    0.00 42690240/42690240     cvOneDMthSegmentModel::N_MinorLoss(long) [31]
+[36]     0.0    0.54    0.00 42690240         cvOneDMaterialLinear::GetN(double) const [36]
+-----------------------------------------------
+                0.08    0.45  811377/811377      cvOneDMthBranchModel::FormNewtonLHS(cvOneDSkylineMatrix*) [32]
+[37]     0.0    0.08    0.45  811377         cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+                0.20    0.01 6232950/10860642     cvOneDSkylineMatrix::AddValue(long, long, double) [43]
+                0.02    0.10 1850202/91162908     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+                0.05    0.06 1850202/1850202     cvOneDMaterialLinear::GetD2pDS2(double, double) const [53]
+                0.01    0.00 1850202/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.01    0.00 1850202/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00 2889027/385946082     cvOneDFEAVector::Get(long) const [41]
+-----------------------------------------------
+                0.01    0.41    2187/2187        cvOneDBFSolver::GenerateSolution() [5]
+[38]     0.0    0.01    0.41    2187         cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.00    0.25    2187/2187        cvOneDLinearSolver::SetSolution(long, double) [46]
+                0.02    0.03  231822/231822      cvOneDLinearSolver::AddFlux(long, double*, double*) [67]
+                0.03    0.01  231822/231822      cvOneDMaterialLinear::GetArea(double, double) const [77]
+                0.03    0.00  695466/128766186     cvOneDMaterialLinear::GetProperty(char*) const [21]
+                0.00    0.01  231822/91162908     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+                0.00    0.01  231822/44772264     cvOneDMaterialLinear::GetIntegralpS(double, double) const [28]
+                0.00    0.01  231822/90084012     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.00    0.00  231822/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00  234009/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00  231822/122547579     cvOneDFEAVector::operator[](long) [58]
+-----------------------------------------------
+                0.00    0.00    1707/21346827     cvOneDBFSolver::GenerateSolution() [5]
+                0.31    0.08 21345120/21346827     cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+[39]     0.0    0.31    0.08 21346827         cvOneDFEAVector::Add(cvOneDFEAVector&) [39]
+                0.08    0.00 121770306/122547579     cvOneDFEAVector::operator[](long) [58]
+-----------------------------------------------
+                0.10    0.00 21345120/85380480     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.10    0.00 21345120/85380480     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                0.19    0.00 42690240/85380480     cvOneDSubdomain::GetElement(long) const [34]
+[40]     0.0    0.38    0.00 85380480         cvOneDSubdomain::GetNodes(long, double*) const [40]
+-----------------------------------------------
+                0.00    0.00 2889027/385946082     cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.00    0.00 2889027/385946082     cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+                0.00    0.00 3700404/385946082     cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [72]
+                0.02    0.00 17472852/385946082     cvOneDFEAVector::CheckPositive(int, int, int) [64]
+                0.02    0.00 17472852/385946082     cvOneDBFSolver::GenerateSolution() [5]
+                0.08    0.00 85380480/385946082     cvOneDMthSegmentModel::N_MinorLoss(long) [31]
+                0.08    0.00 85380480/385946082     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.16    0.00 170760960/385946082     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[41]     0.0    0.36    0.00 385946082         cvOneDFEAVector::Get(long) const [41]
+-----------------------------------------------
+                0.00    0.00  231822/398862168     cvOneDMaterialLinear::GetArea(double, double) const [77]
+                0.00    0.00 1850202/398862168     cvOneDMaterialLinear::GetD2pDS2(double, double) const [53]
+                0.04    0.00 44772264/398862168     cvOneDMaterialLinear::GetIntegralpS(double, double) const [28]
+                0.08    0.00 85380480/398862168     cvOneDMaterialLinear::GetIntegralpD2S(double, double) const [17]
+                0.08    0.00 85380480/398862168     cvOneDMaterialLinear::GetDpDz(double, double) const [18]
+                0.08    0.00 90084012/398862168     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.08    0.00 91162908/398862168     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+[42]     0.0    0.36    0.00 398862168         cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                0.03    0.00  927288/10860642     cvOneDLinearSolver::AddFlux(long, double*, double*) [67]
+                0.12    0.01 3700404/10860642     cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*) [50]
+                0.20    0.01 6232950/10860642     cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+[43]     0.0    0.34    0.02 10860642         cvOneDSkylineMatrix::AddValue(long, long, double) [43]
+                0.02    0.00 10860642/138953232     cvOneDSkylineMatrix::GetPosition(long, long) const [47]
+-----------------------------------------------
+                0.00    0.34    2187/2187        cvOneDBFSolver::GenerateSolution() [5]
+[44]     0.0    0.00    0.34    2187         cvOneDMthBranchModel::FormNewtonRHS(cvOneDFEAVector*) [44]
+                0.06    0.23  811377/811377      cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.03    0.02  811377/811377      cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [72]
+-----------------------------------------------
+                0.06    0.23  811377/811377      cvOneDMthBranchModel::FormNewtonRHS(cvOneDFEAVector*) [44]
+[45]     0.0    0.06    0.23  811377         cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.02    0.10 1850202/91162908     cvOneDMaterialLinear::GetDpDS(double, double) const [19]
+                0.03    0.06 1850202/90084012     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.01    0.00 1850202/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.01    0.00 1850202/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00 3116475/181278243     cvOneDFEAVector::Add(long, double) [49]
+                0.00    0.00 2889027/385946082     cvOneDFEAVector::Get(long) const [41]
+-----------------------------------------------
+                0.00    0.25    2187/2187        cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+[46]     0.0    0.00    0.25    2187         cvOneDLinearSolver::SetSolution(long, double) [46]
+                0.00    0.10    2187/2187        cvOneDSkylineMatrix::ClearColumn(long) [56]
+                0.00    0.06    2187/2187        cvOneDSkylineMatrix::GetColumnEntries(long, long*, double*) const [65]
+                0.00    0.05    2187/2187        cvOneDSkylineMatrix::ClearRow(long) [66]
+                0.04    0.00    2187/6561        cvOneDSkylineMatrix::GetNumberOfEntriesIn(long) const [51]
+                0.00    0.00    8748/122547579     cvOneDFEAVector::operator[](long) [58]
+                0.00    0.00    2187/15309       cvOneDSkylineMatrix::SetValue(long, long, double) [102]
+-----------------------------------------------
+                0.00    0.00    6561/138953232     cvOneDSkylineMatrix::GetColumnEntries(long, long*, double*) const [65]
+                0.00    0.00   15309/138953232     cvOneDSkylineMatrix::SetValue(long, long, double) [102]
+                0.02    0.00 10860642/138953232     cvOneDSkylineMatrix::AddValue(long, long, double) [43]
+                0.18    0.00 128070720/138953232     cvOneDSkylineMatrix::Add(cvOneDDenseMatrix&) [29]
+[47]     0.0    0.20    0.00 138953232         cvOneDSkylineMatrix::GetPosition(long, long) const [47]
+-----------------------------------------------
+                                                 <spontaneous>
+[48]     0.0    0.18    0.00                 cvOneDDenseMatrix::Set(long, long, double) [48]
+-----------------------------------------------
+                0.00    0.00 3116475/181278243     cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.00    0.00 3700404/181278243     cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [72]
+                0.15    0.00 174461364/181278243     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[49]     0.0    0.16    0.00 181278243         cvOneDFEAVector::Add(long, double) [49]
+-----------------------------------------------
+                0.01    0.13  811377/811377      cvOneDMthBranchModel::FormNewtonLHS(cvOneDSkylineMatrix*) [32]
+[50]     0.0    0.01    0.13  811377         cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*) [50]
+                0.12    0.01 3700404/10860642     cvOneDSkylineMatrix::AddValue(long, long, double) [43]
+                0.01    0.00 1850202/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00  811377/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+-----------------------------------------------
+                0.04    0.00    2187/6561        cvOneDSkylineMatrix::ClearRow(long) [66]
+                0.04    0.00    2187/6561        cvOneDSkylineMatrix::ClearColumn(long) [56]
+                0.04    0.00    2187/6561        cvOneDLinearSolver::SetSolution(long, double) [46]
+[51]     0.0    0.13    0.00    6561         cvOneDSkylineMatrix::GetNumberOfEntriesIn(long) const [51]
+-----------------------------------------------
+                0.06    0.00    2187/4374        cvOneDSkylineMatrix::GetColumnEntries(long, long*, double*) const [65]
+                0.06    0.00    2187/4374        cvOneDSkylineMatrix::ClearColumn(long) [56]
+[52]     0.0    0.11    0.00    4374         cvOneDSkylineMatrix::GetColumnEntries(long, long*) const [52]
+-----------------------------------------------
+                0.05    0.06 1850202/1850202     cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+[53]     0.0    0.05    0.06 1850202         cvOneDMaterialLinear::GetD2pDS2(double, double) const [53]
+                0.00    0.05 1850202/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                0.00    0.00 1850202/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                0.06    0.04       1/1           cvOneDBFSolver::Solve() [3]
+[54]     0.0    0.06    0.04       1         cvOneDBFSolver::postprocess_Text() [54]
+                0.01    0.03 1003128/90084012     cvOneDMaterialLinear::GetPressure(double, double) const [26]
+                0.00    0.00     477/479         cvOneDModel::getNumberOfSegments() [148]
+                0.00    0.00     476/953         cvOneDModel::getSegment(long) [140]
+                0.00    0.00     476/952         cvOneDSegment::getNumElements() [141]
+                0.00    0.00     476/952         cvOneDSegment::getSegmentLength() [142]
+                0.00    0.00     476/476         cvOneDSegment::getSegmentName() [158]
+                0.00    0.00     476/476         cvOneDModel::getModelName() [151]
+-----------------------------------------------
+                                                 <spontaneous>
+[55]     0.0    0.10    0.00                 cvOneDMaterialLinear::GetRefWaveSpeed(double) const [55]
+-----------------------------------------------
+                0.00    0.10    2187/2187        cvOneDLinearSolver::SetSolution(long, double) [46]
+[56]     0.0    0.00    0.10    2187         cvOneDSkylineMatrix::ClearColumn(long) [56]
+                0.06    0.00    2187/4374        cvOneDSkylineMatrix::GetColumnEntries(long, long*) const [52]
+                0.04    0.00    2187/6561        cvOneDSkylineMatrix::GetNumberOfEntriesIn(long) const [51]
+                0.00    0.00    6561/15309       cvOneDSkylineMatrix::SetValue(long, long, double) [102]
+-----------------------------------------------
+                0.05    0.00 21345120/42690240     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.05    0.00 21345120/42690240     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[57]     0.0    0.09    0.00 42690240         cvOneDQuadrature::Get(double*, double*) const [57]
+-----------------------------------------------
+                0.00    0.00    1707/122547579     cvOneDMthModelBase::SetBoundaryConditions() [99]
+                0.00    0.00    8748/122547579     cvOneDLinearSolver::SetSolution(long, double) [46]
+                0.00    0.00   20472/122547579     cvOneDBFSolver::CalcInitProps(long) [101]
+                0.00    0.00   50880/122547579     cvOneDMthModelBase::CheckMassBalance() [100]
+                0.00    0.00  231822/122547579     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.00    0.00  463644/122547579     cvOneDLinearSolver::AddFlux(long, double*, double*) [67]
+                0.08    0.00 121770306/122547579     cvOneDFEAVector::Add(cvOneDFEAVector&) [39]
+[58]     0.0    0.08    0.00 122547579         cvOneDFEAVector::operator[](long) [58]
+-----------------------------------------------
+                0.00    0.08       1/1           createAndRunModel(cvOptions*) [2]
+[59]     0.0    0.00    0.08       1         cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*) [59]
+                0.00    0.08       1/1           cvOneDMaterialManager::AddNewMaterialLinear(double, double, double, double) [61]
+                0.00    0.00       1/1           cvOneDMaterialManager::AddNewMaterial(int, cvOneDMaterial*) [244]
+                0.00    0.00       1/1           cvOneDMaterialManager::cvOneDMaterialManager() [245]
+-----------------------------------------------
+                0.08    0.00       1/1           cvOneDMaterialManager::AddNewMaterialLinear(double, double, double, double) [61]
+[60]     0.0    0.08    0.00       1         cvOneDMaterialLinear::SetMaterialType(double) [60]
+-----------------------------------------------
+                0.00    0.08       1/1           cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*) [59]
+[61]     0.0    0.00    0.08       1         cvOneDMaterialManager::AddNewMaterialLinear(double, double, double, double) [61]
+                0.08    0.00       1/1           cvOneDMaterialLinear::SetMaterialType(double) [60]
+                0.00    0.00       1/477         cvOneDMaterialLinear::cvOneDMaterialLinear() [149]
+-----------------------------------------------
+                0.00    0.00   10236/78199860     cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.01    0.00 16708680/78199860     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.01    0.00 16708680/78199860     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+                0.02    0.00 22386132/78199860     cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+                0.02    0.00 22386132/78199860     cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[62]     0.0    0.07    0.00 78199860         cvOneDSubdomain::GetNumberOfElements() const [62]
+-----------------------------------------------
+                0.07    0.00    4374/4374        cvOneDBFSolver::GenerateSolution() [5]
+[63]     0.0    0.07    0.00    4374         cvOneDFEAVector::Norm(normType, int, int, int) const [63]
+-----------------------------------------------
+                0.04    0.02    1707/1707        cvOneDBFSolver::GenerateSolution() [5]
+[64]     0.0    0.04    0.02    1707         cvOneDFEAVector::CheckPositive(int, int, int) [64]
+                0.02    0.00 17472852/385946082     cvOneDFEAVector::Get(long) const [41]
+-----------------------------------------------
+                0.00    0.06    2187/2187        cvOneDLinearSolver::SetSolution(long, double) [46]
+[65]     0.0    0.00    0.06    2187         cvOneDSkylineMatrix::GetColumnEntries(long, long*, double*) const [65]
+                0.06    0.00    2187/4374        cvOneDSkylineMatrix::GetColumnEntries(long, long*) const [52]
+                0.00    0.00    6561/138953232     cvOneDSkylineMatrix::GetPosition(long, long) const [47]
+-----------------------------------------------
+                0.00    0.05    2187/2187        cvOneDLinearSolver::SetSolution(long, double) [46]
+[66]     0.0    0.00    0.05    2187         cvOneDSkylineMatrix::ClearRow(long) [66]
+                0.04    0.00    2187/6561        cvOneDSkylineMatrix::GetNumberOfEntriesIn(long) const [51]
+                0.01    0.00    2187/2187        cvOneDSkylineMatrix::GetRowEntries(long, long*) const [90]
+                0.00    0.00    6561/15309       cvOneDSkylineMatrix::SetValue(long, long, double) [102]
+-----------------------------------------------
+                0.02    0.03  231822/231822      cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+[67]     0.0    0.02    0.03  231822         cvOneDLinearSolver::AddFlux(long, double*, double*) [67]
+                0.03    0.00  927288/10860642     cvOneDSkylineMatrix::AddValue(long, long, double) [43]
+                0.00    0.00  463644/122547579     cvOneDFEAVector::operator[](long) [58]
+-----------------------------------------------
+                0.03    0.00 42690240/85380480     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.03    0.00 42690240/85380480     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[68]     0.0    0.05    0.00 85380480         cvOneDMaterialLinear::GetOutflowFunction(double, double) const [68]
+-----------------------------------------------
+                0.05    0.00 42690240/42690240     cvOneDSubdomain::GetElement(long) const [34]
+[69]     0.0    0.05    0.00 42690240         cvOneDFiniteElement::Set(double*, long*) [69]
+-----------------------------------------------
+                0.05    0.00 21345120/21345120     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[70]     0.0    0.05    0.00 21345120         cvOneDFEAVector::SetEquationNumbers(long*) [70]
+-----------------------------------------------
+                0.00    0.05       1/1           cvOneDBFSolver::Solve() [3]
+[71]     0.0    0.00    0.05       1         cvOneDBFSolver::QuerryModelInformation() [71]
+                0.04    0.00     476/476         cvOneDMaterialLinear::SetAreas_and_length(double, double, double) [75]
+                0.00    0.01     476/476         cvOneDSubdomain::Init(double, double) [91]
+                0.00    0.00    1113/1113        cvOneDModel::getJoint(long) [138]
+                0.00    0.00     840/1696        void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&) [135]
+                0.00    0.00     476/952         cvOneDSegment::getNumElements() [141]
+                0.00    0.00     476/953         cvOneDModel::getSegment(long) [140]
+                0.00    0.00     476/952         cvOneDSegment::getSegmentLength() [142]
+                0.00    0.00     476/476         cvOneDSegment::getMeshType() [153]
+                0.00    0.00     476/476         cvOneDSegment::getInletZ() [164]
+                0.00    0.00     476/476         cvOneDSegment::getOutletZ() [152]
+                0.00    0.00     476/476         cvOneDSubdomain::cvOneDSubdomain() [179]
+                0.00    0.00     476/476         cvOneDSubdomain::SetNumberOfNodes(long) [175]
+                0.00    0.00     476/476         cvOneDSubdomain::SetMeshType(MeshTypeScope::MeshType) [166]
+                0.00    0.00     476/476         cvOneDSubdomain::SetNumberOfElements(long) [178]
+                0.00    0.00     476/476         cvOneDSegment::getInitInletS() [156]
+                0.00    0.00     476/476         cvOneDSegment::getInitOutletS() [157]
+                0.00    0.00     476/476         cvOneDSubdomain::SetInitialFlow(double) [174]
+                0.00    0.00     476/476         cvOneDSubdomain::SetInitialdFlowdT(double) [176]
+                0.00    0.00     476/476         cvOneDSubdomain::SetInitInletS(double) [169]
+                0.00    0.00     476/476         cvOneDSubdomain::SetInitialPressure(double) [177]
+                0.00    0.00     476/476         cvOneDSubdomain::SetInitOutletS(double) [173]
+                0.00    0.00     476/476         cvOneDSubdomain::SetupMaterial(int) [170]
+                0.00    0.00     476/476         cvOneDMaterialLinear::SetPeriod(double) [181]
+                0.00    0.00     476/476         cvOneDSubdomain::SetBoundValue(double) [168]
+                0.00    0.00      10/30          void std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> >::_M_emplace_back_aux<cvOneDSubdomain* const&>(cvOneDSubdomain* const&) [206]
+                0.00    0.00      10/30          void std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> >::_M_emplace_back_aux<cvOneDFEAJoint* const&>(cvOneDFEAJoint* const&) [205]
+                0.00    0.00       8/8           void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&) [212]
+                0.00    0.00       1/479         cvOneDModel::getNumberOfSegments() [148]
+                0.00    0.00       1/1           cvOneDModel::getNumberOfJoints() [223]
+                0.00    0.00       1/1           cvOneDSegment::getInitialFlow() [228]
+                0.00    0.00       1/1           cvOneDSegment::getInitialPressure() [229]
+-----------------------------------------------
+                0.03    0.02  811377/811377      cvOneDMthBranchModel::FormNewtonRHS(cvOneDFEAVector*) [44]
+[72]     0.0    0.03    0.02  811377         cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [72]
+                0.01    0.00 1850202/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00  811377/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00 3700404/385946082     cvOneDFEAVector::Get(long) const [41]
+                0.00    0.00 3700404/181278243     cvOneDFEAVector::Add(long, double) [49]
+-----------------------------------------------
+                0.04    0.00 21345120/21345120     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+[73]     0.0    0.04    0.00 21345120         cvOneDDenseMatrix::SetEquationNumbers(long*) [73]
+-----------------------------------------------
+                0.04    0.00     481/481         cvOneDBFSolver::GenerateSolution() [5]
+[74]     0.0    0.04    0.00     481         cvOneDFEAVector::operator=(cvOneDFEAVector const&) [74]
+-----------------------------------------------
+                0.04    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[75]     0.0    0.04    0.00     476         cvOneDMaterialLinear::SetAreas_and_length(double, double, double) [75]
+-----------------------------------------------
+                                                 <spontaneous>
+[76]     0.0    0.04    0.00                 cvOneDMthModelBase::~cvOneDMthModelBase() [76]
+-----------------------------------------------
+                0.03    0.01  231822/231822      cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+[77]     0.0    0.03    0.01  231822         cvOneDMaterialLinear::GetArea(double, double) const [77]
+                0.00    0.01  231822/398862168     cvOneDMaterialLinear::GetS1(double) const [16]
+                0.00    0.00  231822/398862168     cvOneDMaterialLinear::GetEHR(double) const [42]
+-----------------------------------------------
+                0.00    0.00     476/5799788     cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.00    0.00     846/5799788     cvOneDMthBranchModel::GetUpmostEqnNumber(long, long) [105]
+                0.00    0.00     952/5799788     cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+                0.00    0.00   10712/5799788     cvOneDBFSolver::CalcInitProps(long) [101]
+                0.00    0.00   50880/5799788     cvOneDMthModelBase::CheckMassBalance() [100]
+                0.00    0.00  180942/5799788     cvOneDMthModelBase::SetBoundaryConditions() [99]
+                0.00    0.00  231822/5799788     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.00    0.00  811377/5799788     cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [72]
+                0.00    0.00  811377/5799788     cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*) [50]
+                0.01    0.00 1850202/5799788     cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.01    0.00 1850202/5799788     cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+[78]     0.0    0.04    0.00 5799788         cvOneDSubdomain::GetNumberOfNodes() const [78]
+-----------------------------------------------
+                0.00    0.00   10236/7878582     cvOneDBFSolver::CalcInitProps(long) [101]
+                0.00    0.00   50880/7878582     cvOneDMthModelBase::CheckMassBalance() [100]
+                0.00    0.00  182649/7878582     cvOneDMthModelBase::SetBoundaryConditions() [99]
+                0.00    0.00  234009/7878582     cvOneDMthModelBase::ApplyBoundaryConditions() [38]
+                0.01    0.00 1850202/7878582     cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [72]
+                0.01    0.00 1850202/7878582     cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [45]
+                0.01    0.00 1850202/7878582     cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [37]
+                0.01    0.00 1850202/7878582     cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*) [50]
+[79]     0.0    0.03    0.00 7878582         cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+-----------------------------------------------
+                0.02    0.00 21345120/21345120     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+[80]     0.0    0.02    0.00 21345120         cvOneDDenseMatrix::Clear() [80]
+-----------------------------------------------
+                                                 <spontaneous>
+[81]     0.0    0.02    0.00                 cvOneDQuadrature::~cvOneDQuadrature() [81]
+-----------------------------------------------
+                                                 <spontaneous>
+[82]     0.0    0.02    0.00                 cvOneDMaterialLinear::~cvOneDMaterialLinear() [82]
+-----------------------------------------------
+                0.00    0.01       1/1           cvOneDBFSolver::Solve() [3]
+[83]     0.0    0.00    0.01       1         cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.01    0.00       1/1           cvOneDSkylineMatrix::cvOneDSkylineMatrix(long, long*, char const*) [95]
+                0.00    0.00    9760/85390240     cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [33]
+                0.00    0.00   10236/78199860     cvOneDSubdomain::GetNumberOfElements() const [62]
+                0.00    0.00     846/846         cvOneDMthBranchModel::GetUpmostEqnNumber(long, long) [105]
+                0.00    0.00     476/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00       6/21351688     cvOneDFEAVector::Clear() [85]
+                0.00    0.00   39040/39040       max(long, long) [117]
+                0.00    0.00    9760/10606       min(long, long*) [120]
+                0.00    0.00       4/2191        cvOneDFEAVector::CreateVector(long, char const*) [126]
+                0.00    0.00       4/2191        cvOneDFEAVector::cvOneDFEAVector(long, char const*) [127]
+                0.00    0.00       1/1           cvOneDMthModelBase::GetTotalNumberOfEquations() const [260]
+                0.00    0.00       1/1           clear(long, long*) [220]
+                0.00    0.00       1/1           cvOneDMthModelBase::GetNumberOfElementEquations() const [261]
+                0.00    0.00       1/1           sum(long, long*) [219]
+                0.00    0.00       1/1           cvOneDLinearSolver::SetLHS(cvOneDSkylineMatrix*) [239]
+                0.00    0.00       1/1           cvOneDLinearSolver::SetRHS(cvOneDFEAVector*) [240]
+-----------------------------------------------
+                0.01    0.00 42690240/42690240     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+[84]     0.0    0.01    0.00 42690240         cvOneDMaterialLinear::GetDOutflowDp(double, double) const [84]
+-----------------------------------------------
+                0.00    0.00       1/21351688     cvOneDBFSolver::Solve() [3]
+                0.00    0.00       6/21351688     cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.00    0.00    2187/21351688     cvOneDBFSolver::GenerateSolution() [5]
+                0.00    0.00    4374/21351688     cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+                0.01    0.00 21345120/21351688     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[85]     0.0    0.01    0.00 21351688         cvOneDFEAVector::Clear() [85]
+-----------------------------------------------
+                0.00    0.01   21071/21071       std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >) [88]
+[86]     0.0    0.00    0.01   21071         boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >, boost::iterator_range<__gnu_cxx::__normal_iterator<char*, std::string> >, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string> >::invoke(boost::detail::function::function_buffer&, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>) [86]
+                0.01    0.00   21071/21071       __gnu_cxx::__normal_iterator<char*, std::string> std::__find_if<__gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char> >(__gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char>, std::random_access_iterator_tag) [87]
+-----------------------------------------------
+                0.01    0.00   21071/21071       boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >, boost::iterator_range<__gnu_cxx::__normal_iterator<char*, std::string> >, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string> >::invoke(boost::detail::function::function_buffer&, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>) [86]
+[87]     0.0    0.01    0.00   21071         __gnu_cxx::__normal_iterator<char*, std::string> std::__find_if<__gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char> >(__gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char>, std::random_access_iterator_tag) [87]
+-----------------------------------------------
+                0.00    0.01    3294/3294        readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[88]     0.0    0.00    0.01    3294         std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >) [88]
+                0.00    0.01   21071/21071       boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >, boost::iterator_range<__gnu_cxx::__normal_iterator<char*, std::string> >, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string> >::invoke(boost::detail::function::function_buffer&, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>) [86]
+                0.00    0.00   29646/29646       boost::detail::function::functor_manager<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >::manage(boost::detail::function::function_buffer const&, boost::detail::function::function_buffer&, boost::detail::function::functor_manager_operation_type) [118]
+                0.00    0.00   10892/10902       void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&) [119]
+                0.00    0.00    3294/3294        boost::detail::function::has_empty_target(...) [122]
+-----------------------------------------------
+                0.01    0.00    2187/2187        cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+[89]     0.0    0.01    0.00    2187         cvOneDFEAVector::~cvOneDFEAVector() [89]
+-----------------------------------------------
+                0.01    0.00    2187/2187        cvOneDSkylineMatrix::ClearRow(long) [66]
+[90]     0.0    0.01    0.00    2187         cvOneDSkylineMatrix::GetRowEntries(long, long*) const [90]
+-----------------------------------------------
+                0.00    0.01     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[91]     0.0    0.00    0.01     476         cvOneDSubdomain::Init(double, double) [91]
+                0.01    0.00     476/476         cvOneDFiniteElement::cvOneDFiniteElement() [92]
+-----------------------------------------------
+                0.01    0.00     476/476         cvOneDSubdomain::Init(double, double) [91]
+[92]     0.0    0.01    0.00     476         cvOneDFiniteElement::cvOneDFiniteElement() [92]
+-----------------------------------------------
+                0.00    0.01       1/1           readModel(std::string, cvOptions*) [94]
+[93]     0.0    0.00    0.01       1         readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+                0.00    0.01    3294/3294        std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >) [88]
+                0.00    0.00   10432/300226      char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+                0.00    0.00    3294/3294        void std::__introsort_loop<char*, long>(char*, char*, long) [123]
+                0.00    0.00     675/675         std::string boost::algorithm::detail::transform_range_copy<std::string, std::string, boost::algorithm::detail::to_upperF<char> >(std::string const&, boost::algorithm::detail::to_upperF<char>) [144]
+                0.00    0.00     672/672         __gnu_cxx::__enable_if<std::__is_char<char>::__value, bool>::__type std::operator==<char>(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [145]
+                0.00    0.00     222/222         std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&) [187]
+                0.00    0.00     129/129         void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string const&>(std::string const&) [188]
+                0.00    0.00     110/110         std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::push_back(std::vector<double, std::allocator<double> > const&) [195]
+                0.00    0.00      96/96          void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&) [197]
+                0.00    0.00      84/84          void std::vector<long, std::allocator<long> >::_M_emplace_back_aux<long>(long&&) [198]
+                0.00    0.00      20/20          void std::vector<std::vector<long, std::allocator<long> >, std::allocator<std::vector<long, std::allocator<long> > > >::_M_emplace_back_aux<std::vector<long, std::allocator<long> > const&>(std::vector<long, std::allocator<long> > const&) [207]
+                0.00    0.00      10/10902       void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&) [119]
+                0.00    0.00       8/8           void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_emplace_back_aux<std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> > const&) [211]
+                0.00    0.00       6/6           void std::vector<double, std::allocator<double> >::emplace_back<double>(double&&) [214]
+-----------------------------------------------
+                0.00    0.01       1/1           runOneDSolver(std::string) [1]
+[94]     0.0    0.00    0.01       1         readModel(std::string, cvOptions*) [94]
+                0.00    0.01       1/1           readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+-----------------------------------------------
+                0.01    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[95]     0.0    0.01    0.00       1         cvOneDSkylineMatrix::cvOneDSkylineMatrix(long, long*, char const*) [95]
+                0.00    0.00       1/1           cvOneDSkylineMatrix::Set(long, long*) [243]
+-----------------------------------------------
+                                                 <spontaneous>
+[96]     0.0    0.01    0.00                 cot(double) [96]
+-----------------------------------------------
+                                                 <spontaneous>
+[97]     0.0    0.01    0.00                 cvOneDFEAVector::operator+=(cvOneDFEAVector const&) [97]
+-----------------------------------------------
+                                                 <spontaneous>
+[98]     0.0    0.01    0.00                 cvOneDDenseMatrix::cvOneDDenseMatrix(long, long*, char const*) [98]
+-----------------------------------------------
+                0.00    0.00    1707/1707        cvOneDBFSolver::GenerateSolution() [5]
+[99]     0.0    0.00    0.00    1707         cvOneDMthModelBase::SetBoundaryConditions() [99]
+                0.00    0.00  180942/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00  182649/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00    1707/122547579     cvOneDFEAVector::operator[](long) [58]
+                0.00    0.00    1707/2667        cvOneDMthModelBase::GetFlowRate() [124]
+-----------------------------------------------
+                0.00    0.00     480/480         cvOneDBFSolver::GenerateSolution() [5]
+[100]    0.0    0.00    0.00     480         cvOneDMthModelBase::CheckMassBalance() [100]
+                0.00    0.00   50880/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00   50880/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00   50880/122547579     cvOneDFEAVector::operator[](long) [58]
+                0.00    0.00     960/2667        cvOneDMthModelBase::GetFlowRate() [124]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::Solve() [3]
+[101]    0.0    0.00    0.00     476         cvOneDBFSolver::CalcInitProps(long) [101]
+                0.00    0.00   10712/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00   10236/7878582     cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [79]
+                0.00    0.00   20472/122547579     cvOneDFEAVector::operator[](long) [58]
+                0.00    0.00   10236/2092260     cvOneDSubdomain::GetNodalCoordinate(long) const [115]
+                0.00    0.00     476/476         cvOneDSubdomain::GetInitialFlow() [172]
+                0.00    0.00     476/476         cvOneDSubdomain::GetInitInletS() [167]
+                0.00    0.00     476/476         cvOneDSubdomain::GetInitOutletS() [171]
+-----------------------------------------------
+                0.00    0.00    2187/15309       cvOneDLinearSolver::SetSolution(long, double) [46]
+                0.00    0.00    6561/15309       cvOneDSkylineMatrix::ClearRow(long) [66]
+                0.00    0.00    6561/15309       cvOneDSkylineMatrix::ClearColumn(long) [56]
+[102]    0.0    0.00    0.00   15309         cvOneDSkylineMatrix::SetValue(long, long, double) [102]
+                0.00    0.00   15309/138953232     cvOneDSkylineMatrix::GetPosition(long, long) const [47]
+-----------------------------------------------
+                0.00    0.00       1/2           cvOneDMthSegmentModel::cvOneDMthSegmentModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&, long) [107]
+                0.00    0.00       1/2           cvOneDMthBranchModel::cvOneDMthBranchModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [106]
+[103]    0.0    0.00    0.00       2         cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+                0.00    0.00     952/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00      20/30          void std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> >::_M_emplace_back_aux<cvOneDSubdomain* const&>(cvOneDSubdomain* const&) [206]
+                0.00    0.00      20/30          void std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> >::_M_emplace_back_aux<cvOneDFEAJoint* const&>(cvOneDFEAJoint* const&) [205]
+                0.00    0.00      16/1696        void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&) [135]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::Solve() [3]
+[104]    0.0    0.00    0.00       1         cvOneDBFSolver::DefineMthModels() [104]
+                0.00    0.00       1/1           cvOneDMthSegmentModel::cvOneDMthSegmentModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&, long) [107]
+                0.00    0.00       1/1           cvOneDMthBranchModel::cvOneDMthBranchModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [106]
+                0.00    0.00       1/1           cvOneDMthModelBase::SetInflowRate(double*, double*, int, double) [242]
+                0.00    0.00       1/2           cvOneDBFSolver::AddOneModel(cvOneDMthModelBase*) [216]
+-----------------------------------------------
+                0.00    0.00     846/846         cvOneDBFSolver::CreateGlobalArrays() [83]
+[105]    0.0    0.00    0.00     846         cvOneDMthBranchModel::GetUpmostEqnNumber(long, long) [105]
+                0.00    0.00     846/5799788     cvOneDSubdomain::GetNumberOfNodes() const [78]
+                0.00    0.00     846/10606       min(long, long*) [120]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::DefineMthModels() [104]
+[106]    0.0    0.00    0.00       1         cvOneDMthBranchModel::cvOneDMthBranchModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [106]
+                0.00    0.00       1/2           cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::DefineMthModels() [104]
+[107]    0.0    0.00    0.00       1         cvOneDMthSegmentModel::cvOneDMthSegmentModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&, long) [107]
+                0.00    0.00       1/2           cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+                0.00    0.00       1/1           cvOneDQuadrature::cvOneDQuadrature(int) [238]
+-----------------------------------------------
+                0.00    0.00      14/14          __libc_csu_init [530]
+[108]    0.0    0.00    0.00      14         main [108]
+-----------------------------------------------
+                0.00    0.00   10236/2092260     cvOneDBFSolver::CalcInitProps(long) [101]
+                0.00    0.00 1041012/2092260     cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long) [13]
+                0.00    0.00 1041012/2092260     cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long) [12]
+[115]    0.0    0.00    0.00 2092260         cvOneDSubdomain::GetNodalCoordinate(long) const [115]
+-----------------------------------------------
+                0.00    0.00     110/300226      cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+                0.00    0.00     477/300226      createAndRunModel(cvOptions*) [2]
+                0.00    0.00     675/300226      std::string boost::algorithm::detail::transform_range_copy<std::string, std::string, boost::algorithm::detail::to_upperF<char> >(std::string const&, boost::algorithm::detail::to_upperF<char>) [144]
+                0.00    0.00   10432/300226      readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+                0.00    0.00   11556/300226      getDataTableIDFromStringKey(std::string) [196]
+                0.00    0.00  276976/300226      getListIDWithStringKey(std::string, std::vector<std::string, std::allocator<std::string> >) [137]
+[116]    0.0    0.00    0.00  300226         char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+-----------------------------------------------
+                0.00    0.00   39040/39040       cvOneDBFSolver::CreateGlobalArrays() [83]
+[117]    0.0    0.00    0.00   39040         max(long, long) [117]
+-----------------------------------------------
+                0.00    0.00   29646/29646       std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >) [88]
+[118]    0.0    0.00    0.00   29646         boost::detail::function::functor_manager<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >::manage(boost::detail::function::function_buffer const&, boost::detail::function::function_buffer&, boost::detail::function::functor_manager_operation_type) [118]
+-----------------------------------------------
+                0.00    0.00      10/10902       readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+                0.00    0.00   10892/10902       std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >) [88]
+[119]    0.0    0.00    0.00   10902         void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&) [119]
+-----------------------------------------------
+                0.00    0.00     846/10606       cvOneDMthBranchModel::GetUpmostEqnNumber(long, long) [105]
+                0.00    0.00    9760/10606       cvOneDBFSolver::CreateGlobalArrays() [83]
+[120]    0.0    0.00    0.00   10606         min(long, long*) [120]
+-----------------------------------------------
+                0.00    0.00    3414/3414        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+[121]    0.0    0.00    0.00    3414         cvOneDSkylineMatrix::GetDimension() const [121]
+-----------------------------------------------
+                0.00    0.00    3294/3294        std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >) [88]
+[122]    0.0    0.00    0.00    3294         boost::detail::function::has_empty_target(...) [122]
+-----------------------------------------------
+                0.00    0.00    3294/3294        readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[123]    0.0    0.00    0.00    3294         void std::__introsort_loop<char*, long>(char*, char*, long) [123]
+-----------------------------------------------
+                0.00    0.00     960/2667        cvOneDMthModelBase::CheckMassBalance() [100]
+                0.00    0.00    1707/2667        cvOneDMthModelBase::SetBoundaryConditions() [99]
+[124]    0.0    0.00    0.00    2667         cvOneDMthModelBase::GetFlowRate() [124]
+-----------------------------------------------
+                0.00    0.00      49/2240        cvOneDBFSolver::GenerateSolution() [5]
+                0.00    0.00    2191/2240        cvOneDFEAVector::CreateVector(long, char const*) [126]
+[125]    0.0    0.00    0.00    2240         cvOneDFEAVector::Rename(char const*) [125]
+-----------------------------------------------
+                0.00    0.00       4/2191        cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.00    0.00    2187/2191        cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+[126]    0.0    0.00    0.00    2191         cvOneDFEAVector::CreateVector(long, char const*) [126]
+                0.00    0.00    2191/2240        cvOneDFEAVector::Rename(char const*) [125]
+-----------------------------------------------
+                0.00    0.00       4/2191        cvOneDBFSolver::CreateGlobalArrays() [83]
+                0.00    0.00    2187/2191        cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*) [11]
+[127]    0.0    0.00    0.00    2191         cvOneDFEAVector::cvOneDFEAVector(long, char const*) [127]
+-----------------------------------------------
+                0.00    0.00    2187/2187        cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[128]    0.0    0.00    0.00    2187         cvOneDDenseMatrix::CreateMatrix(long, char const*) [128]
+-----------------------------------------------
+                0.00    0.00    2187/2187        cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[129]    0.0    0.00    0.00    2187         cvOneDDenseMatrix::cvOneDDenseMatrix(long, char const*) [129]
+-----------------------------------------------
+                0.00    0.00    2187/2187        cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [9]
+[130]    0.0    0.00    0.00    2187         cvOneDDenseMatrix::~cvOneDDenseMatrix() [130]
+-----------------------------------------------
+                0.00    0.00    1707/1707        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+[131]    0.0    0.00    0.00    1707         cvOneDSkylineMatrix::GetPosition() [131]
+-----------------------------------------------
+                0.00    0.00    1707/1707        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+[132]    0.0    0.00    0.00    1707         cvOneDSkylineMatrix::GetDiagonalEntries() [132]
+-----------------------------------------------
+                0.00    0.00    1707/1707        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+[133]    0.0    0.00    0.00    1707         cvOneDSkylineMatrix::GetLowerDiagonalEntries() [133]
+-----------------------------------------------
+                0.00    0.00    1707/1707        cvOneDLinearSolver::Solve(cvOneDFEAVector&) [7]
+[134]    0.0    0.00    0.00    1707         cvOneDSkylineMatrix::GetUpperDiagonalEntries() [134]
+-----------------------------------------------
+                0.00    0.00      16/1696        cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+                0.00    0.00     840/1696        cvOneDBFSolver::QuerryModelInformation() [71]
+                0.00    0.00     840/1696        cvOneDModelManager::CreateJoint(char*, double, double, double, int, int, int*, int*) [186]
+[135]    0.0    0.00    0.00    1696         void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&) [135]
+-----------------------------------------------
+                0.00    0.00    1428/1428        cvOneDModel::addSegment(cvOneDSegment*) [150]
+[136]    0.0    0.00    0.00    1428         cvOneDSegment::getSegmentID() [136]
+-----------------------------------------------
+                0.00    0.00    1218/1218        createAndRunModel(cvOptions*) [2]
+[137]    0.0    0.00    0.00    1218         getListIDWithStringKey(std::string, std::vector<std::string, std::allocator<std::string> >) [137]
+                0.00    0.00  276976/300226      char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+-----------------------------------------------
+                0.00    0.00    1113/1113        cvOneDBFSolver::QuerryModelInformation() [71]
+[138]    0.0    0.00    0.00    1113         cvOneDModel::getJoint(long) [138]
+-----------------------------------------------
+                0.00    0.00     960/960         cvOneDBFSolver::GenerateSolution() [5]
+[139]    0.0    0.00    0.00     960         cvOneDMthModelBase::TimeUpdate(double, double) [139]
+-----------------------------------------------
+                0.00    0.00       1/953         createAndRunModel(cvOptions*) [2]
+                0.00    0.00     476/953         cvOneDBFSolver::postprocess_Text() [54]
+                0.00    0.00     476/953         cvOneDBFSolver::QuerryModelInformation() [71]
+[140]    0.0    0.00    0.00     953         cvOneDModel::getSegment(long) [140]
+-----------------------------------------------
+                0.00    0.00     476/952         cvOneDBFSolver::postprocess_Text() [54]
+                0.00    0.00     476/952         cvOneDBFSolver::QuerryModelInformation() [71]
+[141]    0.0    0.00    0.00     952         cvOneDSegment::getNumElements() [141]
+-----------------------------------------------
+                0.00    0.00     476/952         cvOneDBFSolver::postprocess_Text() [54]
+                0.00    0.00     476/952         cvOneDBFSolver::QuerryModelInformation() [71]
+[142]    0.0    0.00    0.00     952         cvOneDSegment::getSegmentLength() [142]
+-----------------------------------------------
+                0.00    0.00     232/928         cvOneDDataTable::setValues(std::vector<double, std::allocator<double> >) [192]
+                0.00    0.00     232/928         cvOneDDataTable::setTime(std::vector<double, std::allocator<double> >) [190]
+                0.00    0.00     464/928         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[143]    0.0    0.00    0.00     928         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [143]
+-----------------------------------------------
+                0.00    0.00     675/675         readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[144]    0.0    0.00    0.00     675         std::string boost::algorithm::detail::transform_range_copy<std::string, std::string, boost::algorithm::detail::to_upperF<char> >(std::string const&, boost::algorithm::detail::to_upperF<char>) [144]
+                0.00    0.00     675/300226      char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+-----------------------------------------------
+                0.00    0.00     672/672         readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[145]    0.0    0.00    0.00     672         __gnu_cxx::__enable_if<std::__is_char<char>::__value, bool>::__type std::operator==<char>(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) [145]
+-----------------------------------------------
+                0.00    0.00     582/582         cvOneDModelManager::CreateNode(char*, double, double, double) [147]
+[146]    0.0    0.00    0.00     582         cvOneDModel::addNode(cvOneDNode*) [146]
+                0.00    0.00      11/11          void std::vector<cvOneDNode*, std::allocator<cvOneDNode*> >::_M_emplace_back_aux<cvOneDNode* const&>(cvOneDNode* const&) [208]
+-----------------------------------------------
+                0.00    0.00     582/582         createAndRunModel(cvOptions*) [2]
+[147]    0.0    0.00    0.00     582         cvOneDModelManager::CreateNode(char*, double, double, double) [147]
+                0.00    0.00     582/582         cvOneDModel::addNode(cvOneDNode*) [146]
+-----------------------------------------------
+                0.00    0.00       1/479         cvOneDBFSolver::QuerryModelInformation() [71]
+                0.00    0.00       1/479         cvOneDBFSolver::Solve() [3]
+                0.00    0.00     477/479         cvOneDBFSolver::postprocess_Text() [54]
+[148]    0.0    0.00    0.00     479         cvOneDModel::getNumberOfSegments() [148]
+-----------------------------------------------
+                0.00    0.00       1/477         cvOneDMaterialManager::AddNewMaterialLinear(double, double, double, double) [61]
+                0.00    0.00     476/477         cvOneDMaterialManager::GetNewInstance(int) [183]
+[149]    0.0    0.00    0.00     477         cvOneDMaterialLinear::cvOneDMaterialLinear() [149]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[150]    0.0    0.00    0.00     476         cvOneDModel::addSegment(cvOneDSegment*) [150]
+                0.00    0.00    1428/1428        cvOneDSegment::getSegmentID() [136]
+                0.00    0.00     476/476         std::vector<cvOneDSegment*, std::allocator<cvOneDSegment*> >::_M_default_append(unsigned long) [184]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::postprocess_Text() [54]
+[151]    0.0    0.00    0.00     476         cvOneDModel::getModelName() [151]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[152]    0.0    0.00    0.00     476         cvOneDSegment::getOutletZ() [152]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[153]    0.0    0.00    0.00     476         cvOneDSegment::getMeshType() [153]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[154]    0.0    0.00    0.00     476         cvOneDSegment::setMeshType(MeshTypeScope::MeshType) [154]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[155]    0.0    0.00    0.00     476         cvOneDSegment::setSegmentID(long) [155]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[156]    0.0    0.00    0.00     476         cvOneDSegment::getInitInletS() [156]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[157]    0.0    0.00    0.00     476         cvOneDSegment::getInitOutletS() [157]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::postprocess_Text() [54]
+[158]    0.0    0.00    0.00     476         cvOneDSegment::getSegmentName() [158]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[159]    0.0    0.00    0.00     476         cvOneDSegment::setInOutJoints(long, long) [159]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[160]    0.0    0.00    0.00     476         cvOneDSegment::setNumElements(long) [160]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[161]    0.0    0.00    0.00     476         cvOneDSegment::setParentModel(void*) [161]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[162]    0.0    0.00    0.00     476         cvOneDSegment::setSegmentName(char*) [162]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[163]    0.0    0.00    0.00     476         cvOneDSegment::setSegmentLength(double) [163]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[164]    0.0    0.00    0.00     476         cvOneDSegment::getInletZ() [164]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+[165]    0.0    0.00    0.00     476         cvOneDSegment::cvOneDSegment(double, double, double, bool) [165]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[166]    0.0    0.00    0.00     476         cvOneDSubdomain::SetMeshType(MeshTypeScope::MeshType) [166]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::CalcInitProps(long) [101]
+[167]    0.0    0.00    0.00     476         cvOneDSubdomain::GetInitInletS() [167]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[168]    0.0    0.00    0.00     476         cvOneDSubdomain::SetBoundValue(double) [168]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[169]    0.0    0.00    0.00     476         cvOneDSubdomain::SetInitInletS(double) [169]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[170]    0.0    0.00    0.00     476         cvOneDSubdomain::SetupMaterial(int) [170]
+                0.00    0.00     476/476         cvOneDMaterialManager::GetNewInstance(int) [183]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::CalcInitProps(long) [101]
+[171]    0.0    0.00    0.00     476         cvOneDSubdomain::GetInitOutletS() [171]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::CalcInitProps(long) [101]
+[172]    0.0    0.00    0.00     476         cvOneDSubdomain::GetInitialFlow() [172]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[173]    0.0    0.00    0.00     476         cvOneDSubdomain::SetInitOutletS(double) [173]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[174]    0.0    0.00    0.00     476         cvOneDSubdomain::SetInitialFlow(double) [174]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[175]    0.0    0.00    0.00     476         cvOneDSubdomain::SetNumberOfNodes(long) [175]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[176]    0.0    0.00    0.00     476         cvOneDSubdomain::SetInitialdFlowdT(double) [176]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[177]    0.0    0.00    0.00     476         cvOneDSubdomain::SetInitialPressure(double) [177]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[178]    0.0    0.00    0.00     476         cvOneDSubdomain::SetNumberOfElements(long) [178]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[179]    0.0    0.00    0.00     476         cvOneDSubdomain::cvOneDSubdomain() [179]
+-----------------------------------------------
+                0.00    0.00     476/476         createAndRunModel(cvOptions*) [2]
+[180]    0.0    0.00    0.00     476         cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [180]
+                0.00    0.00     476/476         cvOneDSegment::cvOneDSegment(double, double, double, bool) [165]
+                0.00    0.00     476/476         cvOneDSegment::setSegmentID(long) [155]
+                0.00    0.00     476/476         cvOneDSegment::setSegmentName(char*) [162]
+                0.00    0.00     476/476         cvOneDSegment::setSegmentLength(double) [163]
+                0.00    0.00     476/476         cvOneDSegment::setParentModel(void*) [161]
+                0.00    0.00     476/476         cvOneDSegment::setNumElements(long) [160]
+                0.00    0.00     476/476         cvOneDSegment::setInOutJoints(long, long) [159]
+                0.00    0.00     476/476         cvOneDSegment::setMeshType(MeshTypeScope::MeshType) [154]
+                0.00    0.00     476/476         cvOneDModel::addSegment(cvOneDSegment*) [150]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDBFSolver::QuerryModelInformation() [71]
+[181]    0.0    0.00    0.00     476         cvOneDMaterialLinear::SetPeriod(double) [181]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDMaterialManager::GetNewInstance(int) [183]
+[182]    0.0    0.00    0.00     476         cvOneDMaterialLinear::operator=(cvOneDMaterialLinear const&) [182]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDSubdomain::SetupMaterial(int) [170]
+[183]    0.0    0.00    0.00     476         cvOneDMaterialManager::GetNewInstance(int) [183]
+                0.00    0.00     476/477         cvOneDMaterialLinear::cvOneDMaterialLinear() [149]
+                0.00    0.00     476/476         cvOneDMaterialLinear::operator=(cvOneDMaterialLinear const&) [182]
+-----------------------------------------------
+                0.00    0.00     476/476         cvOneDModel::addSegment(cvOneDSegment*) [150]
+[184]    0.0    0.00    0.00     476         std::vector<cvOneDSegment*, std::allocator<cvOneDSegment*> >::_M_default_append(unsigned long) [184]
+-----------------------------------------------
+                0.00    0.00     371/371         cvOneDModelManager::CreateJoint(char*, double, double, double, int, int, int*, int*) [186]
+[185]    0.0    0.00    0.00     371         cvOneDModel::addJoint(cvOneDJoint*) [185]
+                0.00    0.00      10/10          void std::vector<cvOneDJoint*, std::allocator<cvOneDJoint*> >::_M_emplace_back_aux<cvOneDJoint* const&>(cvOneDJoint* const&) [209]
+-----------------------------------------------
+                0.00    0.00     371/371         createAndRunModel(cvOptions*) [2]
+[186]    0.0    0.00    0.00     371         cvOneDModelManager::CreateJoint(char*, double, double, double, int, int, int*, int*) [186]
+                0.00    0.00     840/1696        void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&) [135]
+                0.00    0.00     371/371         cvOneDModel::addJoint(cvOneDJoint*) [185]
+-----------------------------------------------
+                0.00    0.00     222/222         readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[187]    0.0    0.00    0.00     222         std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&) [187]
+-----------------------------------------------
+                0.00    0.00     129/129         readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[188]    0.0    0.00    0.00     129         void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string const&>(std::string const&) [188]
+-----------------------------------------------
+                0.00    0.00     110/110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[189]    0.0    0.00    0.00     110         cvOneDDataTable::setName(std::string) [189]
+-----------------------------------------------
+                0.00    0.00     110/110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[190]    0.0    0.00    0.00     110         cvOneDDataTable::setTime(std::vector<double, std::allocator<double> >) [190]
+                0.00    0.00     232/928         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [143]
+-----------------------------------------------
+                0.00    0.00     110/110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[191]    0.0    0.00    0.00     110         cvOneDDataTable::setType(std::string) [191]
+-----------------------------------------------
+                0.00    0.00     110/110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[192]    0.0    0.00    0.00     110         cvOneDDataTable::setValues(std::vector<double, std::allocator<double> >) [192]
+                0.00    0.00     232/928         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [143]
+-----------------------------------------------
+                0.00    0.00     110/110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[193]    0.0    0.00    0.00     110         cvOneDDataTable::cvOneDDataTable() [193]
+-----------------------------------------------
+                0.00    0.00     110/110         createAndRunModel(cvOptions*) [2]
+[194]    0.0    0.00    0.00     110         cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+                0.00    0.00     464/928         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&) [143]
+                0.00    0.00     110/110         cvOneDDataTable::cvOneDDataTable() [193]
+                0.00    0.00     110/110         cvOneDDataTable::setName(std::string) [189]
+                0.00    0.00     110/110         cvOneDDataTable::setType(std::string) [191]
+                0.00    0.00     110/300226      char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+                0.00    0.00     110/110         cvOneDDataTable::setTime(std::vector<double, std::allocator<double> >) [190]
+                0.00    0.00     110/110         cvOneDDataTable::setValues(std::vector<double, std::allocator<double> >) [192]
+                0.00    0.00       8/8           void std::vector<cvOneDDataTable*, std::allocator<cvOneDDataTable*> >::_M_emplace_back_aux<cvOneDDataTable* const&>(cvOneDDataTable* const&) [210]
+-----------------------------------------------
+                0.00    0.00     110/110         readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[195]    0.0    0.00    0.00     110         std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::push_back(std::vector<double, std::allocator<double> > const&) [195]
+-----------------------------------------------
+                0.00    0.00     107/107         createAndRunModel(cvOptions*) [2]
+[196]    0.0    0.00    0.00     107         getDataTableIDFromStringKey(std::string) [196]
+                0.00    0.00   11556/300226      char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag) [116]
+-----------------------------------------------
+                0.00    0.00      96/96          readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[197]    0.0    0.00    0.00      96         void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&) [197]
+-----------------------------------------------
+                0.00    0.00      84/84          readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[198]    0.0    0.00    0.00      84         void std::vector<long, std::allocator<long> >::_M_emplace_back_aux<long>(long&&) [198]
+-----------------------------------------------
+                0.00    0.00      50/50          cvOneDBFSolver::GenerateSolution() [5]
+[199]    0.0    0.00    0.00      50         cvOneDString::~cvOneDString() [199]
+-----------------------------------------------
+                0.00    0.00      48/48          cvOneDBFSolver::GenerateSolution() [5]
+[200]    0.0    0.00    0.00      48         cvOneDString::data() [200]
+-----------------------------------------------
+                0.00    0.00      48/48          cvOneDString::operator+(char const*) [204]
+[201]    0.0    0.00    0.00      48         cvOneDString::cvOneDString(cvOneDString const&) [201]
+-----------------------------------------------
+                0.00    0.00      48/48          cvOneDBFSolver::GenerateSolution() [5]
+[202]    0.0    0.00    0.00      48         cvOneDString::operator=(cvOneDString const&) [202]
+-----------------------------------------------
+                0.00    0.00      48/48          cvOneDString::operator+(char const*) [204]
+[203]    0.0    0.00    0.00      48         cvOneDString::operator+=(char const*) [203]
+-----------------------------------------------
+                0.00    0.00      48/48          cvOneDBFSolver::GenerateSolution() [5]
+[204]    0.0    0.00    0.00      48         cvOneDString::operator+(char const*) [204]
+                0.00    0.00      48/48          cvOneDString::cvOneDString(cvOneDString const&) [201]
+                0.00    0.00      48/48          cvOneDString::operator+=(char const*) [203]
+-----------------------------------------------
+                0.00    0.00      10/30          cvOneDBFSolver::QuerryModelInformation() [71]
+                0.00    0.00      20/30          cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+[205]    0.0    0.00    0.00      30         void std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> >::_M_emplace_back_aux<cvOneDFEAJoint* const&>(cvOneDFEAJoint* const&) [205]
+-----------------------------------------------
+                0.00    0.00      10/30          cvOneDBFSolver::QuerryModelInformation() [71]
+                0.00    0.00      20/30          cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [103]
+[206]    0.0    0.00    0.00      30         void std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> >::_M_emplace_back_aux<cvOneDSubdomain* const&>(cvOneDSubdomain* const&) [206]
+-----------------------------------------------
+                0.00    0.00      20/20          readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[207]    0.0    0.00    0.00      20         void std::vector<std::vector<long, std::allocator<long> >, std::allocator<std::vector<long, std::allocator<long> > > >::_M_emplace_back_aux<std::vector<long, std::allocator<long> > const&>(std::vector<long, std::allocator<long> > const&) [207]
+-----------------------------------------------
+                0.00    0.00      11/11          cvOneDModel::addNode(cvOneDNode*) [146]
+[208]    0.0    0.00    0.00      11         void std::vector<cvOneDNode*, std::allocator<cvOneDNode*> >::_M_emplace_back_aux<cvOneDNode* const&>(cvOneDNode* const&) [208]
+-----------------------------------------------
+                0.00    0.00      10/10          cvOneDModel::addJoint(cvOneDJoint*) [185]
+[209]    0.0    0.00    0.00      10         void std::vector<cvOneDJoint*, std::allocator<cvOneDJoint*> >::_M_emplace_back_aux<cvOneDJoint* const&>(cvOneDJoint* const&) [209]
+-----------------------------------------------
+                0.00    0.00       8/8           cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [194]
+[210]    0.0    0.00    0.00       8         void std::vector<cvOneDDataTable*, std::allocator<cvOneDDataTable*> >::_M_emplace_back_aux<cvOneDDataTable* const&>(cvOneDDataTable* const&) [210]
+-----------------------------------------------
+                0.00    0.00       8/8           readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[211]    0.0    0.00    0.00       8         void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_emplace_back_aux<std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> > const&) [211]
+-----------------------------------------------
+                0.00    0.00       8/8           cvOneDBFSolver::QuerryModelInformation() [71]
+[212]    0.0    0.00    0.00       8         void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&) [212]
+-----------------------------------------------
+                0.00    0.00       8/8           __libc_csu_init [530]
+[213]    0.0    0.00    0.00       8         _init [213]
+-----------------------------------------------
+                0.00    0.00       6/6           readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [93]
+[214]    0.0    0.00    0.00       6         void std::vector<double, std::allocator<double> >::emplace_back<double>(double&&) [214]
+-----------------------------------------------
+                0.00    0.00       2/2           cvOptions::check() [257]
+[215]    0.0    0.00    0.00       2         checkForPositiveVal(std::vector<double, std::allocator<double> >) [215]
+-----------------------------------------------
+                0.00    0.00       1/2           cvOneDBFSolver::DefineMthModels() [104]
+                0.00    0.00       1/2           cvOneDBFSolver::Solve() [3]
+[216]    0.0    0.00    0.00       2         cvOneDBFSolver::AddOneModel(cvOneDMthModelBase*) [216]
+                0.00    0.00       2/2           void std::vector<cvOneDMthModelBase*, std::allocator<cvOneDMthModelBase*> >::_M_emplace_back_aux<cvOneDMthModelBase* const&>(cvOneDMthModelBase* const&) [218]
+-----------------------------------------------
+                0.00    0.00       2/2           cvOneDBFSolver::GenerateSolution() [5]
+[217]    0.0    0.00    0.00       2         cvOneDMthModelBase::EquationInitialize(cvOneDFEAVector const*, cvOneDFEAVector*) [217]
+-----------------------------------------------
+                0.00    0.00       2/2           cvOneDBFSolver::AddOneModel(cvOneDMthModelBase*) [216]
+[218]    0.0    0.00    0.00       2         void std::vector<cvOneDMthModelBase*, std::allocator<cvOneDMthModelBase*> >::_M_emplace_back_aux<cvOneDMthModelBase* const&>(cvOneDMthModelBase* const&) [218]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[219]    0.0    0.00    0.00       1         sum(long, long*) [219]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[220]    0.0    0.00    0.00       1         clear(long, long*) [220]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::cvOneDModelManager(char*) [241]
+[221]    0.0    0.00    0.00       1         cvOneDModel::setModelID(long) [221]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::cvOneDModelManager(char*) [241]
+[222]    0.0    0.00    0.00       1         cvOneDModel::setModelName(char*) [222]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::QuerryModelInformation() [71]
+[223]    0.0    0.00    0.00       1         cvOneDModel::getNumberOfJoints() [223]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::cvOneDModelManager(char*) [241]
+[224]    0.0    0.00    0.00       1         cvOneDModel::cvOneDModel() [224]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::GenerateSolution() [5]
+[225]    0.0    0.00    0.00       1         cvOneDString::cvOneDString(char const*) [225]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::GenerateSolution() [5]
+[226]    0.0    0.00    0.00       1         cvOneDString::cvOneDString() [226]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::GenerateSolution() [5]
+[227]    0.0    0.00    0.00       1         cvOneDVector<cvOneDVector<double> >::SetSize(int) [227]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::QuerryModelInformation() [71]
+[228]    0.0    0.00    0.00       1         cvOneDSegment::getInitialFlow() [228]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::QuerryModelInformation() [71]
+[229]    0.0    0.00    0.00       1         cvOneDSegment::getInitialPressure() [229]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[230]    0.0    0.00    0.00       1         cvOneDBFSolver::SetMaxStep(long) [230]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[231]    0.0    0.00    0.00       1         cvOneDBFSolver::SetModelPtr(cvOneDModel*) [231]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[232]    0.0    0.00    0.00       1         cvOneDBFSolver::SetStepSize(long) [232]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[233]    0.0    0.00    0.00       1         cvOneDBFSolver::SetDeltaTime(double) [233]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[234]    0.0    0.00    0.00       1         cvOneDBFSolver::SetQuadPoints(long) [234]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[235]    0.0    0.00    0.00       1         cvOneDBFSolver::SetInletBCType(BoundCondTypeScope::BoundCondType) [235]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[236]    0.0    0.00    0.00       1         cvOneDBFSolver::DefineInletFlow(double*, double*, int) [236]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [4]
+[237]    0.0    0.00    0.00       1         cvOneDBFSolver::SetConvergenceCriteria(double) [237]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDMthSegmentModel::cvOneDMthSegmentModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&, long) [107]
+[238]    0.0    0.00    0.00       1         cvOneDQuadrature::cvOneDQuadrature(int) [238]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[239]    0.0    0.00    0.00       1         cvOneDLinearSolver::SetLHS(cvOneDSkylineMatrix*) [239]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[240]    0.0    0.00    0.00       1         cvOneDLinearSolver::SetRHS(cvOneDFEAVector*) [240]
+-----------------------------------------------
+                0.00    0.00       1/1           createAndRunModel(cvOptions*) [2]
+[241]    0.0    0.00    0.00       1         cvOneDModelManager::cvOneDModelManager(char*) [241]
+                0.00    0.00       1/1           cvOneDModel::cvOneDModel() [224]
+                0.00    0.00       1/1           cvOneDModel::setModelName(char*) [222]
+                0.00    0.00       1/1           cvOneDModel::setModelID(long) [221]
+                0.00    0.00       1/1           void std::vector<cvOneDModel*, std::allocator<cvOneDModel*> >::_M_emplace_back_aux<cvOneDModel* const&>(cvOneDModel* const&) [262]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::DefineMthModels() [104]
+[242]    0.0    0.00    0.00       1         cvOneDMthModelBase::SetInflowRate(double*, double*, int, double) [242]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDSkylineMatrix::cvOneDSkylineMatrix(long, long*, char const*) [95]
+[243]    0.0    0.00    0.00       1         cvOneDSkylineMatrix::Set(long, long*) [243]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*) [59]
+[244]    0.0    0.00    0.00       1         cvOneDMaterialManager::AddNewMaterial(int, cvOneDMaterial*) [244]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*) [59]
+[245]    0.0    0.00    0.00       1         cvOneDMaterialManager::cvOneDMaterialManager() [245]
+-----------------------------------------------
+                0.00    0.00       1/1           runOneDSolver(std::string) [1]
+[246]    0.0    0.00    0.00       1         cvOptions::printToFile(std::string) [246]
+                0.00    0.00       1/1           cvOptions::printModelName(_IO_FILE*) [249]
+                0.00    0.00       1/1           cvOptions::printJointData(_IO_FILE*) [248]
+                0.00    0.00       1/1           cvOptions::printNodeData(_IO_FILE*) [247]
+                0.00    0.00       1/1           cvOptions::printSegmentData(_IO_FILE*) [251]
+                0.00    0.00       1/1           cvOptions::printMaterialData(_IO_FILE*) [252]
+                0.00    0.00       1/1           cvOptions::printSolverOptions(_IO_FILE*) [253]
+                0.00    0.00       1/1           cvOptions::printJointInletData(_IO_FILE*) [254]
+                0.00    0.00       1/1           cvOptions::printDataTables(_IO_FILE*) [250]
+                0.00    0.00       1/1           cvOptions::printJointOutletData(_IO_FILE*) [255]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[247]    0.0    0.00    0.00       1         cvOptions::printNodeData(_IO_FILE*) [247]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[248]    0.0    0.00    0.00       1         cvOptions::printJointData(_IO_FILE*) [248]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[249]    0.0    0.00    0.00       1         cvOptions::printModelName(_IO_FILE*) [249]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[250]    0.0    0.00    0.00       1         cvOptions::printDataTables(_IO_FILE*) [250]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[251]    0.0    0.00    0.00       1         cvOptions::printSegmentData(_IO_FILE*) [251]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[252]    0.0    0.00    0.00       1         cvOptions::printMaterialData(_IO_FILE*) [252]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[253]    0.0    0.00    0.00       1         cvOptions::printSolverOptions(_IO_FILE*) [253]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[254]    0.0    0.00    0.00       1         cvOptions::printJointInletData(_IO_FILE*) [254]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::printToFile(std::string) [246]
+[255]    0.0    0.00    0.00       1         cvOptions::printJointOutletData(_IO_FILE*) [255]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOptions::check() [257]
+[256]    0.0    0.00    0.00       1         cvOptions::checkSegmentLengthConsistency() [256]
+-----------------------------------------------
+                0.00    0.00       1/1           runOneDSolver(std::string) [1]
+[257]    0.0    0.00    0.00       1         cvOptions::check() [257]
+                0.00    0.00       2/2           checkForPositiveVal(std::vector<double, std::allocator<double> >) [215]
+                0.00    0.00       1/1           cvOptions::checkSegmentLengthConsistency() [256]
+-----------------------------------------------
+                0.00    0.00       1/1           runOneDSolver(std::string) [1]
+[258]    0.0    0.00    0.00       1         cvOptions::cvOptions() [258]
+-----------------------------------------------
+                0.00    0.00       1/1           runOneDSolver(std::string) [1]
+[259]    0.0    0.00    0.00       1         cvOptions::~cvOptions() [259]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[260]    0.0    0.00    0.00       1         cvOneDMthModelBase::GetTotalNumberOfEquations() const [260]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDBFSolver::CreateGlobalArrays() [83]
+[261]    0.0    0.00    0.00       1         cvOneDMthModelBase::GetNumberOfElementEquations() const [261]
+-----------------------------------------------
+                0.00    0.00       1/1           cvOneDModelManager::cvOneDModelManager(char*) [241]
+[262]    0.0    0.00    0.00       1         void std::vector<cvOneDModel*, std::allocator<cvOneDModel*> >::_M_emplace_back_aux<cvOneDModel* const&>(cvOneDModel* const&) [262]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [27] GetModulus(double*, double*) [167] cvOneDSubdomain::GetInitInletS() [11] cvOneDMthSegmentModel::FormNewtonRHS(cvOneDFEAVector*)
+  [93] readModelFile(std::string, cvOptions*, std::vector<std::string, std::allocator<std::string> >) [168] cvOneDSubdomain::SetBoundValue(double) [13] cvOneDMthSegmentModel::FormElementLHS(long, cvOneDDenseMatrix*, long)
+   [2] createAndRunModel(cvOptions*) [169] cvOneDSubdomain::SetInitInletS(double) [12] cvOneDMthSegmentModel::FormElementRHS(long, cvOneDFEAVector*, long)
+ [215] checkForPositiveVal(std::vector<double, std::allocator<double> >) [170] cvOneDSubdomain::SetupMaterial(int) [107] cvOneDMthSegmentModel::cvOneDMthSegmentModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&, long)
+ [137] getListIDWithStringKey(std::string, std::vector<std::string, std::allocator<std::string> >) [171] cvOneDSubdomain::GetInitOutletS() [118] boost::detail::function::functor_manager<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >::manage(boost::detail::function::function_buffer const&, boost::detail::function::function_buffer&, boost::detail::function::functor_manager_operation_type)
+ [196] getDataTableIDFromStringKey(std::string) [172] cvOneDSubdomain::GetInitialFlow() [122] boost::detail::function::has_empty_target(...)
+  [96] cot(double)           [173] cvOneDSubdomain::SetInitOutletS(double) [86] boost::detail::function::function_obj_invoker2<boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >, boost::iterator_range<__gnu_cxx::__normal_iterator<char*, std::string> >, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string> >::invoke(boost::detail::function::function_buffer&, __gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>)
+ [117] max(long, long)       [174] cvOneDSubdomain::SetInitialFlow(double) [88] std::vector<std::string, std::allocator<std::string> >& boost::algorithm::iter_split<std::vector<std::string, std::allocator<std::string> >, std::string, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> > >(std::vector<std::string, std::allocator<std::string> >&, std::string&, boost::algorithm::detail::token_finderF<boost::algorithm::detail::is_any_ofF<char> >)
+ [120] min(long, long*)      [175] cvOneDSubdomain::SetNumberOfNodes(long) [144] std::string boost::algorithm::detail::transform_range_copy<std::string, std::string, boost::algorithm::detail::to_upperF<char> >(std::string const&, boost::algorithm::detail::to_upperF<char>)
+ [219] sum(long, long*)      [176] cvOneDSubdomain::SetInitialdFlowdT(double) [246] cvOptions::printToFile(std::string)
+ [220] clear(long, long*)    [177] cvOneDSubdomain::SetInitialPressure(double) [247] cvOptions::printNodeData(_IO_FILE*)
+  [94] readModel(std::string, cvOptions*) [178] cvOneDSubdomain::SetNumberOfElements(long) [248] cvOptions::printJointData(_IO_FILE*)
+ [150] cvOneDModel::addSegment(cvOneDSegment*) [91] cvOneDSubdomain::Init(double, double) [249] cvOptions::printModelName(_IO_FILE*)
+ [140] cvOneDModel::getSegment(long) [179] cvOneDSubdomain::cvOneDSubdomain() [250] cvOptions::printDataTables(_IO_FILE*)
+ [221] cvOneDModel::setModelID(long) [238] cvOneDQuadrature::cvOneDQuadrature(int) [251] cvOptions::printSegmentData(_IO_FILE*)
+ [151] cvOneDModel::getModelName() [81] cvOneDQuadrature::~cvOneDQuadrature() [252] cvOptions::printMaterialData(_IO_FILE*)
+ [222] cvOneDModel::setModelName(char*) [128] cvOneDDenseMatrix::CreateMatrix(long, char const*) [253] cvOptions::printSolverOptions(_IO_FILE*)
+ [223] cvOneDModel::getNumberOfJoints() [73] cvOneDDenseMatrix::SetEquationNumbers(long*) [254] cvOptions::printJointInletData(_IO_FILE*)
+ [148] cvOneDModel::getNumberOfSegments() [30] cvOneDDenseMatrix::Add(long, long, double) [255] cvOptions::printJointOutletData(_IO_FILE*)
+ [146] cvOneDModel::addNode(cvOneDNode*) [48] cvOneDDenseMatrix::Set(long, long, double) [256] cvOptions::checkSegmentLengthConsistency()
+ [185] cvOneDModel::addJoint(cvOneDJoint*) [80] cvOneDDenseMatrix::Clear() [257] cvOptions::check()
+ [138] cvOneDModel::getJoint(long) [129] cvOneDDenseMatrix::cvOneDDenseMatrix(long, char const*) [258] cvOptions::cvOptions()
+ [224] cvOneDModel::cvOneDModel() [98] cvOneDDenseMatrix::cvOneDDenseMatrix(long, long*, char const*) [259] cvOptions::~cvOptions()
+ [200] cvOneDString::data()  [130] cvOneDDenseMatrix::~cvOneDDenseMatrix() [41] cvOneDFEAVector::Get(long) const
+ [225] cvOneDString::cvOneDString(char const*) [46] cvOneDLinearSolver::SetSolution(long, double) [63] cvOneDFEAVector::Norm(normType, int, int, int) const
+ [201] cvOneDString::cvOneDString(cvOneDString const&) [6] cvOneDLinearSolver::SolNonSymSysSkyLine(double*, double*, double*, double*, long*, double*, long, int, double) [34] cvOneDSubdomain::GetElement(long) const
+ [226] cvOneDString::cvOneDString() [7] cvOneDLinearSolver::Solve(cvOneDFEAVector&) [35] cvOneDSubdomain::GetConnectivity(long, long*) const
+ [199] cvOneDString::~cvOneDString() [8] cvOneDLinearSolver::scalv(double*, double*, long) [78] cvOneDSubdomain::GetNumberOfNodes() const
+ [202] cvOneDString::operator=(cvOneDString const&) [239] cvOneDLinearSolver::SetLHS(cvOneDSkylineMatrix*) [115] cvOneDSubdomain::GetNodalCoordinate(long) const
+ [203] cvOneDString::operator+=(char const*) [240] cvOneDLinearSolver::SetRHS(cvOneDFEAVector*) [62] cvOneDSubdomain::GetNumberOfElements() const
+ [204] cvOneDString::operator+(char const*) [20] cvOneDLinearSolver::solvLT(double*, double*, long*, long) [40] cvOneDSubdomain::GetNodes(long, double*) const
+ [227] cvOneDVector<cvOneDVector<double> >::SetSize(int) [14] cvOneDLinearSolver::solvUT(double*, double*, double*, double*, long*, long) [57] cvOneDQuadrature::Get(double*, double*) const
+ [152] cvOneDSegment::getOutletZ() [67] cvOneDLinearSolver::AddFlux(long, double*, double*) [260] cvOneDMthModelBase::GetTotalNumberOfEquations() const
+ [153] cvOneDSegment::getMeshType() [147] cvOneDModelManager::CreateNode(char*, double, double, double) [261] cvOneDMthModelBase::GetNumberOfElementEquations() const
+ [154] cvOneDSegment::setMeshType(MeshTypeScope::MeshType) [4] cvOneDModelManager::SolveModel(double, long, long, long, int, char*, double*, double*, double, int, int) [24] cvOneDFiniteElement::Interpolate(double, double*) const
+ [136] cvOneDSegment::getSegmentID() [186] cvOneDModelManager::CreateJoint(char*, double, double, double, int, int, int*, int*) [22] cvOneDFiniteElement::Evaluate(double, double*, double*, double*) const
+ [155] cvOneDSegment::setSegmentID(long) [180] cvOneDModelManager::CreateSegment(char*, long, double, long, long, long, double, double, double, int, char*, double, int, int, char*, double*, double*, int) [47] cvOneDSkylineMatrix::GetPosition(long, long) const
+ [156] cvOneDSegment::getInitInletS() [59] cvOneDModelManager::CreateMaterial(char*, char*, double, double, double, int, double*, int*) [121] cvOneDSkylineMatrix::GetDimension() const
+ [157] cvOneDSegment::getInitOutletS() [194] cvOneDModelManager::CreateDataTable(char*, char*, std::vector<double, std::allocator<double> >) [90] cvOneDSkylineMatrix::GetRowEntries(long, long*) const
+ [228] cvOneDSegment::getInitialFlow() [241] cvOneDModelManager::cvOneDModelManager(char*) [52] cvOneDSkylineMatrix::GetColumnEntries(long, long*) const
+ [141] cvOneDSegment::getNumElements() [139] cvOneDMthModelBase::TimeUpdate(double, double) [65] cvOneDSkylineMatrix::GetColumnEntries(long, long*, double*) const
+ [158] cvOneDSegment::getSegmentName() [124] cvOneDMthModelBase::GetFlowRate() [51] cvOneDSkylineMatrix::GetNumberOfEntriesIn(long) const
+ [159] cvOneDSegment::setInOutJoints(long, long) [242] cvOneDMthModelBase::SetInflowRate(double*, double*, int, double) [26] cvOneDMaterialLinear::GetPressure(double, double) const
+ [160] cvOneDSegment::setNumElements(long) [100] cvOneDMthModelBase::CheckMassBalance() [21] cvOneDMaterialLinear::GetProperty(char*) const
+ [161] cvOneDSegment::setParentModel(void*) [217] cvOneDMthModelBase::EquationInitialize(cvOneDFEAVector const*, cvOneDFEAVector*) [84] cvOneDMaterialLinear::GetDOutflowDp(double, double) const
+ [162] cvOneDSegment::setSegmentName(char*) [33] cvOneDMthModelBase::GetEquationNumbers(long, long*, long) [28] cvOneDMaterialLinear::GetIntegralpS(double, double) const
+ [142] cvOneDSegment::getSegmentLength() [99] cvOneDMthModelBase::SetBoundaryConditions() [17] cvOneDMaterialLinear::GetIntegralpD2S(double, double) const
+ [163] cvOneDSegment::setSegmentLength(double) [38] cvOneDMthModelBase::ApplyBoundaryConditions() [55] cvOneDMaterialLinear::GetRefWaveSpeed(double) const
+ [229] cvOneDSegment::getInitialPressure() [79] cvOneDMthModelBase::GetNodalEquationNumbers(long, long*, long) [68] cvOneDMaterialLinear::GetOutflowFunction(double, double) const
+ [164] cvOneDSegment::getInletZ() [103] cvOneDMthModelBase::cvOneDMthModelBase(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [36] cvOneDMaterialLinear::GetN(double) const
+ [165] cvOneDSegment::cvOneDSegment(double, double, double, bool) [76] cvOneDMthModelBase::~cvOneDMthModelBase() [16] cvOneDMaterialLinear::GetS1(double) const
+ [230] cvOneDBFSolver::SetMaxStep(long) [69] cvOneDFiniteElement::Set(double*, long*) [15] cvOneDMaterialLinear::Getr1(double) const
+ [216] cvOneDBFSolver::AddOneModel(cvOneDMthModelBase*) [92] cvOneDFiniteElement::cvOneDFiniteElement() [42] cvOneDMaterialLinear::GetEHR(double) const
+ [231] cvOneDBFSolver::SetModelPtr(cvOneDModel*) [56] cvOneDSkylineMatrix::ClearColumn(long) [77] cvOneDMaterialLinear::GetArea(double, double) const
+ [232] cvOneDBFSolver::SetStepSize(long) [131] cvOneDSkylineMatrix::GetPosition() [19] cvOneDMaterialLinear::GetDpDS(double, double) const
+ [233] cvOneDBFSolver::SetDeltaTime(double) [132] cvOneDSkylineMatrix::GetDiagonalEntries() [18] cvOneDMaterialLinear::GetDpDz(double, double) const
+ [101] cvOneDBFSolver::CalcInitProps(long) [133] cvOneDSkylineMatrix::GetLowerDiagonalEntries() [23] cvOneDMaterialLinear::GetDS1Dz(double) const
+ [234] cvOneDBFSolver::SetQuadPoints(long) [134] cvOneDSkylineMatrix::GetUpperDiagonalEntries() [25] cvOneDMaterialLinear::GetDr1Dz(double) const
+ [235] cvOneDBFSolver::SetInletBCType(BoundCondTypeScope::BoundCondType) [29] cvOneDSkylineMatrix::Add(cvOneDDenseMatrix&) [53] cvOneDMaterialLinear::GetD2pDS2(double, double) const
+ [236] cvOneDBFSolver::DefineInletFlow(double*, double*, int) [243] cvOneDSkylineMatrix::Set(long, long*) [116] char* std::string::_S_construct<boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default> >(boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, boost::transform_iterator<boost::algorithm::detail::to_upperF<char>, __gnu_cxx::__normal_iterator<char const*, std::string>, boost::use_default, boost::use_default>, std::allocator<char> const&, std::input_iterator_tag)
+ [104] cvOneDBFSolver::DefineMthModels() [10] cvOneDSkylineMatrix::Clear() [208] void std::vector<cvOneDNode*, std::allocator<cvOneDNode*> >::_M_emplace_back_aux<cvOneDNode* const&>(cvOneDNode* const&)
+   [5] cvOneDBFSolver::GenerateSolution() [43] cvOneDSkylineMatrix::AddValue(long, long, double) [209] void std::vector<cvOneDJoint*, std::allocator<cvOneDJoint*> >::_M_emplace_back_aux<cvOneDJoint* const&>(cvOneDJoint* const&)
+  [54] cvOneDBFSolver::postprocess_Text() [66] cvOneDSkylineMatrix::ClearRow(long) [262] void std::vector<cvOneDModel*, std::allocator<cvOneDModel*> >::_M_emplace_back_aux<cvOneDModel* const&>(cvOneDModel* const&)
+  [83] cvOneDBFSolver::CreateGlobalArrays() [102] cvOneDSkylineMatrix::SetValue(long, long, double) [184] std::vector<cvOneDSegment*, std::allocator<cvOneDSegment*> >::_M_default_append(unsigned long)
+  [71] cvOneDBFSolver::QuerryModelInformation() [95] cvOneDSkylineMatrix::cvOneDSkylineMatrix(long, long*, char const*) [205] void std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> >::_M_emplace_back_aux<cvOneDFEAJoint* const&>(cvOneDFEAJoint* const&)
+ [237] cvOneDBFSolver::SetConvergenceCriteria(double) [60] cvOneDMaterialLinear::SetMaterialType(double) [210] void std::vector<cvOneDDataTable*, std::allocator<cvOneDDataTable*> >::_M_emplace_back_aux<cvOneDDataTable* const&>(cvOneDDataTable* const&)
+   [3] cvOneDBFSolver::Solve() [75] cvOneDMaterialLinear::SetAreas_and_length(double, double, double) [206] void std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> >::_M_emplace_back_aux<cvOneDSubdomain* const&>(cvOneDSubdomain* const&)
+ [189] cvOneDDataTable::setName(std::string) [181] cvOneDMaterialLinear::SetPeriod(double) [218] void std::vector<cvOneDMthModelBase*, std::allocator<cvOneDMthModelBase*> >::_M_emplace_back_aux<cvOneDMthModelBase* const&>(cvOneDMthModelBase* const&)
+ [190] cvOneDDataTable::setTime(std::vector<double, std::allocator<double> >) [149] cvOneDMaterialLinear::cvOneDMaterialLinear() [211] void std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::_M_emplace_back_aux<std::vector<double, std::allocator<double> > const&>(std::vector<double, std::allocator<double> > const&)
+ [191] cvOneDDataTable::setType(std::string) [82] cvOneDMaterialLinear::~cvOneDMaterialLinear() [195] std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >::push_back(std::vector<double, std::allocator<double> > const&)
+ [192] cvOneDDataTable::setValues(std::vector<double, std::allocator<double> >) [182] cvOneDMaterialLinear::operator=(cvOneDMaterialLinear const&) [207] void std::vector<std::vector<long, std::allocator<long> >, std::allocator<std::vector<long, std::allocator<long> > > >::_M_emplace_back_aux<std::vector<long, std::allocator<long> > const&>(std::vector<long, std::allocator<long> > const&)
+ [193] cvOneDDataTable::cvOneDDataTable() [32] cvOneDMthBranchModel::FormNewtonLHS(cvOneDSkylineMatrix*) [188] void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string const&>(std::string const&)
+ [126] cvOneDFEAVector::CreateVector(long, char const*) [44] cvOneDMthBranchModel::FormNewtonRHS(cvOneDFEAVector*) [119] void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&)
+  [64] cvOneDFEAVector::CheckPositive(int, int, int) [37] cvOneDMthBranchModel::FormLagrangeLHSbyP(long, cvOneDSkylineMatrix*) [187] std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&)
+  [70] cvOneDFEAVector::SetEquationNumbers(long*) [50] cvOneDMthBranchModel::FormLagrangeLHSbyQ(long, cvOneDSkylineMatrix*) [214] void std::vector<double, std::allocator<double> >::emplace_back<double>(double&&)
+  [39] cvOneDFEAVector::Add(cvOneDFEAVector&) [45] cvOneDMthBranchModel::FormLagrangeRHSbyP(long, cvOneDFEAVector*) [143] void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double const&>(double const&)
+  [49] cvOneDFEAVector::Add(long, double) [72] cvOneDMthBranchModel::FormLagrangeRHSbyQ(long, cvOneDFEAVector*) [197] void std::vector<double, std::allocator<double> >::_M_emplace_back_aux<double>(double&&)
+  [85] cvOneDFEAVector::Clear() [105] cvOneDMthBranchModel::GetUpmostEqnNumber(long, long) [135] void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&)
+ [125] cvOneDFEAVector::Rename(char const*) [106] cvOneDMthBranchModel::cvOneDMthBranchModel(std::vector<cvOneDSubdomain*, std::allocator<cvOneDSubdomain*> > const&, std::vector<cvOneDFEAJoint*, std::allocator<cvOneDFEAJoint*> > const&, std::vector<int, std::allocator<int> > const&) [212] void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&)
+ [127] cvOneDFEAVector::cvOneDFEAVector(long, char const*) [244] cvOneDMaterialManager::AddNewMaterial(int, cvOneDMaterial*) [198] void std::vector<long, std::allocator<long> >::_M_emplace_back_aux<long>(long&&)
+  [89] cvOneDFEAVector::~cvOneDFEAVector() [183] cvOneDMaterialManager::GetNewInstance(int) [123] void std::__introsort_loop<char*, long>(char*, char*, long)
+  [74] cvOneDFEAVector::operator=(cvOneDFEAVector const&) [61] cvOneDMaterialManager::AddNewMaterialLinear(double, double, double, double) [87] __gnu_cxx::__normal_iterator<char*, std::string> std::__find_if<__gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char> >(__gnu_cxx::__normal_iterator<char*, std::string>, __gnu_cxx::__normal_iterator<char*, std::string>, boost::algorithm::detail::is_any_ofF<char>, std::random_access_iterator_tag)
+  [58] cvOneDFEAVector::operator[](long) [245] cvOneDMaterialManager::cvOneDMaterialManager() [145] __gnu_cxx::__enable_if<std::__is_char<char>::__value, bool>::__type std::operator==<char>(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+  [97] cvOneDFEAVector::operator+=(cvOneDFEAVector const&) [31] cvOneDMthSegmentModel::N_MinorLoss(long) [213] _init
+ [166] cvOneDSubdomain::SetMeshType(MeshTypeScope::MeshType) [9] cvOneDMthSegmentModel::FormNewtonLHS(cvOneDSkylineMatrix*) [108] main
