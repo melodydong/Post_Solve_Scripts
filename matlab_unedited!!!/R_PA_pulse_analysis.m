@@ -6,7 +6,7 @@ clear
 clc
 close all
 
-orig_direc = '/home/melody/OneDSolver_Project/sparse_MT/test/';
+orig_direc = '/home/melody/PH/CHD_model/Analysis_1D3D/';
 
 %%%%%%%%%%%%%%%% USER INPUT: Directory for Results Files %%%%%%%%%%%%%%%%%%
 % Names of Results for Comparison (with prefix for 1D results)
@@ -18,46 +18,41 @@ orig_direc = '/home/melody/OneDSolver_Project/sparse_MT/test/';
 % prefix_name = 'PA_106bif_20FE';
 % res_names = {'Skyline Matrix','Sparse Matrix Single Proc','Sparse Matrix Multithreading'};
 
-% For 1D/3D comparison of Normal
-% direc_1D = {'/home/melody/PH/CHD_model/VSD_1DSolver/Q4R200/RCR_BC/Q4RCR_puls/'};
-% direc_3D = {'/home/melody/PH/CHD_model/VSD_QP/RCR_BC/rigid/puls/', ...
-%     '/home/melody/PH/CHD_model/VSD_QP/RCR_BC/deform/uniwall/puls/E256/',...
-%     '/home/melody/PH/CHD_model/VSD_QP/RCR_BC/deform/uniwall/puls/', ...
-%     '/home/melody/PH/CHD_model/VSD_QP/RCR_BC/deform/varwall/'};
-% prefix_name = 'PA_106bif_LINEAR_Q4_deform_RCR_puls';
-% res_names = {'1:1 1D','1:1 3D Rigid','1:1 3D Deform Uniform E=2.56e6',...
-%     '1:1 3D Deform Uniform E=3.11e6','1:1 3D Deform Variable E=3.11e6'};
+% For 1D/3D comparison of 1:1
+% direc_1D = {};
+% direc_3D = {'/home/melody/PH/CHD_model/VSD_QP/R_BC/rigid/pulsatile/72-procs_case/VSD_QP_oldgui-allresults/', ...
+%     '/home/melody/PH/CHD_model/VSD_QP/R_BC/deform/puls', ...
+%     '/home/melody/PH/CHD_model/VSD_QP/RCR_BC/rigid/puls', ...
+%     };
+% prefix_name = {};
+% res_names = {'1:1 3D Rigid R','1:1 3D Def Uni R E311 h0.17', ...
+%     '1:1 3D Rigid RCR', };
 
 % For 1D/3D comparison of VSD 2:1
-% direc_1D = {'/home/melody/PH/CHD_model/VSD_1DSolver/Q8R200/deform/RCR_BC/puls/'};
-% direc_3D = {'/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/rigid/puls/', ...
+% direc_1D = {};
+% direc_3D = {'/home/melody/PH/CHD_model/VSD_Q8R200/R_BC/rigid/pulsatile/72-procs_case/VSD_Q8R200_oldguid-allresults/', ...
+%     '/home/melody/PH/CHD_model/VSD_Q8R200/R_BC/deform/puls/',...
+%     '/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/rigid/puls/', ...
 %     '/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/deform/uniwall/puls/',...
-%     '/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/deform/varwall/', ...
-%     '/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/deform/varwall/E290/'};
-% prefix_name = 'PA_106bif_LINEAR_Q8_deform_RCR_puls';
-% res_names = {'2:1 1D','2:1 3D Rigid','2:1 3D Deform Uniform E=3.11e6',...
-%     '2:1 3D Deform Variable E=3.11e6','2:1 3D Deform Variable E=2.90e6'};
+%     '/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/deform/varwall/E290/',...
+%     '/home/melody/PH/CHD_model/VSD_Q8R200/RCR_BC/deform/varwall/E311/'};
+% prefix_name = {};
+% res_names = {'2:1 3D R Rigid','2:1 3D R Def Uni E311 h0.17', ...
+%     '2:1 3D RCR Rigid','2:1 3D RCR Def Uni E311 h0.17',...
+%     '2:1 3D RCR Def E290 Var','2:1 3D RCR Def E311 Var'};
 
 % For 1D/3D comparison of VSD 3:1
-% direc_1D = {'/home/melody/PH/CHD_model/VSD_1DSolver/Q12R200/deform/RCR_BC/puls/'};
-% direc_3D = {'/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/rigid/puls/', ...
-%     '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/deform/uniwall/puls/',...
-%     '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/deform/varwall/96-procs_case_E311/', ...
-%     '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/deform/varwall/96-procs_case_E351/'};
-% prefix_name = 'PA_106bif_LINEAR_Q12_deform_RCR_puls';
-% res_names = {'3:1 1D','3:1 3D Rigid','3:1 3D Deform Uniform E=3.11e6',...
-%     '3:1 3D Deform Variable E=3.11e6','3:1 3D Deform Variable E=3.51e6'};
-
-% for 1D Comparison of VSD Conditions
-direc_1D = {'/home/melody/PH/CHD_model/VSD_1DSolver/Q4R200/RCR_BC/Q4RCR_puls/', ...
-    '/home/melody/PH/CHD_model/VSD_1DSolver/Q8R200/deform/RCR_BC/puls/', ...
-    '/home/melody/PH/CHD_model/VSD_1DSolver/Q12R200/deform/RCR_BC/puls/'};
-direc_3D = {};
-prefix_name = {'PA_106bif_LINEAR_Q4_deform_RCR_puls', ...
-    'PA_106bif_LINEAR_Q8_deform_RCR_puls', ...
-    'PA_106bif_LINEAR_Q12_deform_RCR_puls'};
-res_names = {'1:1 1D','2:1 1D','3:1 1D'};
-
+direc_1D = {};
+direc_3D = {'/home/melody/PH/CHD_model/VSD_Q12R200/R_BC/rigid/pulsatile/72-procs_case/VSD_Q12R200_oldgui-allresults/', ...
+    '/home/melody/PH/CHD_model/VSD_Q12R200/R_BC/deform/puls/',...
+    '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/rigid/puls/', ...
+    '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/deform/uniwall/puls/', ...
+    '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/deform/varwall/96-procs_case_E311/', ...
+    '/home/melody/PH/CHD_model/VSD_Q12R200/RCR_BC/deform/varwall/96-procs_case_E351/'};
+prefix_name = 'PA_106bif_LINEAR_Q12_deform_RCR_puls';
+res_names = {'3:1 3D R Rigid','3:1 3D R Def Uni E311 h0.17', ...
+    '3:1 3D RCR Rigid','3:1 3D RCR Def Uni E311 h0.17',...
+    '3:1 3D RCR Def E311 Var','3:1 3D RCR Def E351 Var'};
 
 area3D = load('/home/melody/PH/CHD_model/Analysis_1D3D/SU0201_2009_outletArea.txt');
 
@@ -73,11 +68,13 @@ qConv = 0.06; % Flow cgs --> L/min
     
 
 %%%%%%%%%%%%%%%%% Load .dat files to parse through %%%%%%%%%%%%%%%%%%%%%%%%
-direc = direc_1D{1};
-cd(direc);
-dat_list = dir('*.dat');
-dat_names = {dat_list.name};
-clearvars dat_list
+if size(direc_1D,2) >= 1
+    direc = direc_1D{1};
+    cd(direc);
+    dat_list = dir('*.dat');
+    dat_names = {dat_list.name};
+    clearvars dat_list
+end
 
 cd(orig_direc);
 
@@ -103,6 +100,7 @@ branches = {'inflow', 'LPA', 'LPA1', 'LPA1_1', 'LPA1_1_1', 'LPA1_1_2', ...
     'RPA10_1', 'RPA11', 'RPA12', 'RPA12_1', 'RPA12_2', 'RPA12_3', ...
     'RPA13', 'RPA14', 'RPA15', 'RPA_1', 'RPA_1_1', 'RPA_1_1_1'}; 
 
+if size(direc_1D,2) >= 1
 outlet_segname = cell(size(branches));
 ind_out = 1;
 for ind_branch = 2:size(branches,2)
@@ -143,6 +141,8 @@ for ind_branch = 2:size(branches,2)
     
 end
 
+end
+
 clear dat_names ind* direc branch_found temp* *num
 
 %%%%%%%%%%%%%%%%%%%%%%%% 3D Simulation P/Q %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,15 +163,17 @@ for i = 1:size(direc_3D,2)
     press3D{i} = tempP.data.*pConv;
     
     % Save WSS for all outlets and inlet
-    for ind_outlet = 1:size(outlet_segname,2)
+    for ind_outlet = 1:size(branches,2)
         temp_Q = flow3D{i};
         temp_wss(ind_outlet,:) = 4*viscosity*temp_Q(:,ind_outlet+1)./(pi*sqrt(area3D(ind_outlet)/pi)^3);
     end
     wss3D{i} = temp_wss;
     
+    
+    clear temp*
+    
 end
 
-clear temp*
 
 %%%%%%%%%%%%%%%%%%%%%%% 1D Simulation P/Q/WSS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 flow1D = cell([1, size(direc_1D,1)]);
@@ -228,10 +230,12 @@ for i = 1:size(direc_1D,2)
     wss1D{i} = temp_wss;
     area1D{i} = temp_area;
     
+    clear temp*
+    
 end
 
 
-clear temp* rows
+clear rows
 
 %%%%%%%%%%%% SET UP TIME ARRAYS %%%%%%%%%%%%%
 if size(direc_1D,1)>0
@@ -243,9 +247,9 @@ if size(direc_1D,1)>0
     % convert times to seconds
     t = 0:dt:(cycle-1)*dt;
     % % only plot the last cardiac cycle
-    % startcycle=129;
-    % tt = startcycle:startcycle+cycle;
-    tt = (numSteps-cycle):numSteps-1;
+    startcycle=86;
+    tt = startcycle:startcycle+cycle-1;
+%     tt = (numSteps-cycle):numSteps-1;
     % extended time
     t1Dall = 0:dt:(numSteps-1)*dt;
 end
@@ -258,7 +262,7 @@ if size(direc_3D,1)>0
     % convert time to seconds
     t3D = 0:dt3D:(cycle3D-1)*dt3D;
     % only plot last cardiac cycle
-    tt3D = numSteps3D-cycle3D:numSteps3D-1;
+    tt3D = numSteps3D-(3*cycle3D):(numSteps3D-2*cycle3D)-1;
     % extended time
     t3Dall = 0:dt3D:(numSteps3D-1)*dt3D;
 end
@@ -435,6 +439,41 @@ for ind_outlet = (2):20:(size(branches,2))
     lgd.FontSize = 10;
     set(lgd, 'Interpreter','none');
     legend('boxOff')
+end
+
+
+
+%% Calculations
+Avg3D = cell(size(direc_3D));
+
+for i = 1:size(direc_3D,2)
+    
+    temp_flow = flow3D{i};
+    temp_press = press3D{i};
+    
+    %Calculate Resistance of Pulmonary Artery (P=QR)
+    [row col] = size(temp_flow);
+    Qavg = [];
+    for j = 1:(col-1)
+        Qavg(:,j) = mean(temp_flow(:,j+1));
+    end
+    Qtot = abs(Qavg(:,1));  %-sum(Qavg(:,2:end))) % Calculates total flow
+
+    Pout_avg = mean(mean(temp_press(:,3:end)));
+    Pin_avg = mean(temp_press(:,2));
+    Pdrop = (Pin_avg - Pout_avg); % Calculates pressure drop from inletto outlet
+
+    RPA = Pdrop/Qtot; % Calculates resistance in Pulmonary artery of 3D model
+
+    ccbegin = 41;
+    ccend = 61;
+    ccPout_avg = mean(mean(temp_press(tt3D,3:end)));
+    ccPin_avg = mean(temp_press(tt3D,2));
+    Qin_avg = mean(temp_flow(tt3D,2));
+    Qout_avg = mean(mean(temp_flow(tt3D,3:end)));
+    
+    Avg3D{i} = [RPA; Qin_avg; Qout_avg; ccPin_avg; ccPout_avg];
+
 end
 
 % % Average flow error at each outlet and inlet

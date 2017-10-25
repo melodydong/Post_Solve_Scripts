@@ -23,7 +23,7 @@ def readModelFile(inputFile):
 
 	# Message
 	print("\n");
-	print("Reading file: %s ... \n",str(inputFile));
+	print("Reading file: %s ... \n" % str(inputFile));
 
 	# Declare input File
 	with open(inputFile,'r') as inFile:
@@ -65,15 +65,40 @@ def readModelFile(inputFile):
 				jointOut.append(int(outSeg))
 			jointInfo[jointNum] = jointOut;
 
-	return(segInfo, nodeInfo, jointInfo)
+		elif subLine[0] == 'MODEL':
+			model = str(subLine[1])
+
+	# Print Statements for TROUBLESHOOTING
+	# print(segInfo[0])
+
+	return(segInfo, nodeInfo, jointInfo, model)
   
 
+# ============================
+# POST-PROCESS VTK SINGLE FILE
+# ============================
+def postprocess_VTK_XML3D_ONEFILE(filePaths, inputFile):
+	segInfo, nodeInfo, jointInfo, model = readModelFile(inputFile);
+	
+	modelFile = model + ".vtp";
+	with open(modelFile,"a") as vtpSingle:
+
+		# Write VTK XML Header
+		vtpSingle.write("<?xml version=\"1.0\"?>\n");
+		vtpSingle.write("<VTKFile type=\"PolyData\" version=\"0.1\" byte_order=\"LittleEndian\">\n");
+		vtpSingle.write("<PolyData>\n");
+
+		segInlet = 
+		# Define Incidence
+		for segName in segInfo:
+			
 
 
 
-## ========================
-##      MAIN FUNCTION
-## ========================
+
+# ========================
+#      MAIN FUNCTION
+# ========================
 if __name__ == "__main__":
 	
 	# get command line arguments
@@ -139,7 +164,8 @@ if __name__ == "__main__":
 	# with open(args.inputFile) as inFile:
 	# 	reader = csv.reader(inFile)
 	inputFile = args.inputFile
-	readModelFile(inputFile);
+	# readModelFile(inputFile);
+	postprocess_VTK_XML3D_ONEFILE(filePaths, inputFile)
 
 	# Iterate through all files
 	# geometries = []
