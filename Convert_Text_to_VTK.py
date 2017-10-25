@@ -8,7 +8,7 @@
 # #################
 import sys
 import os
-import numpy as numpy
+import numpy as np
 import math
 import csv
 import argparse
@@ -21,45 +21,52 @@ import argparse
 # ########################################
 def readModelFile(inputFile):
 
-  # Message
-  print("\n");
-  print("Reading file: %s ... \n",str(inputFile));
+	# Message
+	print("\n");
+	print("Reading file: %s ... \n",str(inputFile));
 
-  # Declare
-  # cvStringVec tokenizedString;
-  # cvLongVec   tempIntVec;
-  # string      matType;
-  # cvDoubleVec temp;
-  # bool doInclude = false;
+	# Declare input File
+	with open(inputFile,'r') as inFile:
+		# inFileTxt = csv.reader(inFile);
 
+		lineCount = 1;
+		reminder = 0;
+		totSegments = 0;
 
-  # Declare input File
-  with open(inputFile,'r') as inFile:
-  	# inFileTxt = csv.reader(inFile);
+		# Read Data from File
+		inFileTxt = inFile.readlines();
+		# print(inFileTxt[14]);
 
-  	lineCount = 1;
-  	reminder = 0;
-  	totSegments = 0;
+		inFile.close();
 
-  	# Read Data from File
-  	inFileTxt = inFile.readlines();
-  	# print(inFileTxt[14]);
+	# Initialize dictionaries to store Nodal Coordinates, joints, and segment info
+	segInfo = {};
+	nodeInfo = {};
+	jointInfo = {};
 
-  	inFile.close();
+	for line in inFileTxt:
+		subLine = line.split(' ');
+		if subLine[0] == 'NODE':
+			# Node info dictionary => <nodeID> : [X, Y, Z]
+			nodeInfo[int(subLine[1])] = [float(subLine[2]), float(subLine[3]), float(subLine[4])];
 
-  # Initialize dictionaries to store Nodal Coordinates, joints, and segment info
-  segInfo = {}
+		elif subLine[0] == 'SEGMENT':
+			# Seg info dictionary => <segName> : [<segID>, <segLen>, <FE>, <NodeIn>, <NodeOut>, <Ain>, <Aout>]
+			segInfo[str(subLine[1])] = [int(subLine[2]), float(subLine[3]), int(subLine[4]), 
+				int(subLine[5]), int(subLine[6]), float(subLine[7]), float(subLine[8])];
 
-  for line in inFileTxt:
-  	subLine = line.split(' ');
-  	if subLine[0] == 'NODE':
-		print('Nodessss');
+		elif subLine[0] == 'JOINTINLET':
+			jointNum = int(subLine[3])
 
-	elif subLine[0] == 'SEGMENT':
-		print('SEGMENTSAAA');
+		elif subLine[0] == 'JOINTOUTLET':
+			jointOut = []
+			# numOutSeg = int(subLine[2])
+			for outSeg in subLine[3:]:
+				jointOut.append(int(outSeg))
+			jointInfo[jointNum] = jointOut;
 
-	elif subLine[0] == 'JOINT':
-		print('JOINT TO YOU');
+	return(segInfo, nodeInfo, jointInfo)
+  
 
 
 
